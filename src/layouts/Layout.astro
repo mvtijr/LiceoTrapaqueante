@@ -39,17 +39,17 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://funny-me
 		<meta name="twitter:description" content={description} />
 	</head>
 	<body class="bg-gray-50 font-sans flex flex-col min-h-screen relative">
-		<!-- Logo de fondo difuminado -->
-		<div class="fixed inset-0 pointer-events-none z-0 flex items-center justify-center">
+		<!-- Logo de fondo difuminado (Watermark por encima de todo pero sin bloquear clics) -->
+		<div class="fixed inset-0 pointer-events-none z-50 flex items-center justify-center overflow-hidden">
 			<img 
 				src="/logo.jpg" 
 				alt="" 
 				aria-hidden="true"
-				class="w-[520px] max-w-[70vw] opacity-[0.04] blur-sm select-none"
+				class="w-[600px] max-w-[80vw] opacity-[0.06] blur-sm select-none"
 			/>
 		</div>
 		<Header />
-		<main class="flex-grow relative z-10">
+		<main class="flex-grow">
 			<slot />
 		</main>
 		<Footer />
