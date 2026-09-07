@@ -33,6 +33,8 @@ const { Content } = await noticia.render();
 </Layout>
 
 <style is:global>
+    @reference "../../styles/global.css";
+
     .markdown-body h1 { @apply text-3xl font-bold text-gray-900 mt-8 mb-4; }
     .markdown-body h2 { @apply text-2xl font-bold text-gray-800 mt-6 mb-4; }
     .markdown-body p { @apply text-gray-700 leading-relaxed mb-4; }
