@@ -1,23 +1,130 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
-<Layout title="Liceo Trapaqueante - Admisión">
+<Layout 
+    title="Liceo Trapaqueante - Proceso de Admisión"
+    description="Conoce los requisitos, fechas y pasos del proceso de admisión del Liceo Trapaqueante de Tirúa para el año 2027."
+>
+    <!-- Header -->
     <div class="bg-liceo-blue py-12 border-b-4 border-liceo-yellow text-white">
         <div class="max-w-6xl mx-auto px-4 text-center">
-            <h1 class="text-4xl font-bold mb-4">Proceso de Admisión</h1>
-            <p class="text-lg max-w-2xl mx-auto">Únete a la gran familia del Liceo Trapaqueante.</p>
+            <h1 class="text-4xl font-bold mb-4">Proceso de Admisión 2027</h1>
+            <p class="text-lg max-w-2xl mx-auto text-blue-200">Únete a la gran familia del Liceo Trapaqueante. Aquí encontrarás toda la información que necesitas.</p>
         </div>
     </div>
-    
-    <div class="max-w-4xl mx-auto px-4 py-16">
-        <div class="bg-white p-8 rounded-lg shadow-md border-t-4 border-liceo-red mb-8">
-            <h2 class="text-2xl font-bold text-gray-800 mb-4">Requisitos de Postulación</h2>
-            <ul class="list-disc pl-6 space-y-2 text-gray-700">
-                <li>Certificado de nacimiento original.</li>
-                <li>Certificado de notas del año anterior.</li>
-                <li>Informe de personalidad.</li>
-                <li>Completar la ficha de postulación presencial u online.</li>
-            </ul>
+
+    <div class="max-w-5xl mx-auto px-4 py-16 space-y-10">
+
+        <!-- Pasos del proceso -->
+        <div>
+            <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">¿Cómo postular?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+                <div class="flex flex-col items-center p-4">
+                    <div class="bg-liceo-blue text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl font-black mb-3">1</div>
+                    <h4 class="font-bold text-gray-800">Revisa los requisitos</h4>
+                    <p class="text-gray-500 text-sm mt-1">Asegúrate de tener todos los documentos listos.</p>
+                </div>
+                <div class="flex flex-col items-center p-4">
+                    <div class="bg-liceo-yellow text-liceo-blue w-14 h-14 rounded-full flex items-center justify-center text-2xl font-black mb-3">2</div>
+                    <h4 class="font-bold text-gray-800">Completa la ficha</h4>
+                    <p class="text-gray-500 text-sm mt-1">Llena el formulario de postulación en nuestra secretaría.</p>
+                </div>
+                <div class="flex flex-col items-center p-4">
+                    <div class="bg-liceo-green text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl font-black mb-3">3</div>
+                    <h4 class="font-bold text-gray-800">Entrega documentos</h4>
+                    <p class="text-gray-500 text-sm mt-1">Presenta la documentación en secretaría del Liceo.</p>
+                </div>
+                <div class="flex flex-col items-center p-4">
+                    <div class="bg-liceo-red text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl font-black mb-3">4</div>
+                    <h4 class="font-bold text-gray-800">Confirma matrícula</h4>
+                    <p class="text-gray-500 text-sm mt-1">Espera la confirmación y formaliza tu matrícula.</p>
+                </div>
+            </div>
         </div>
+
+        <!-- Requisitos y Fechas -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-liceo-red">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+                    <i class="fas fa-file-alt text-liceo-red"></i> Documentos Requeridos
+                </h2>
+                <ul class="space-y-3">
+                    <li class="flex items-start gap-3 text-gray-700">
+                        <i class="fas fa-check-circle text-liceo-green mt-1"></i>
+                        Certificado de nacimiento original
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-700">
+                        <i class="fas fa-check-circle text-liceo-green mt-1"></i>
+                        Certificado de notas del año anterior
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-700">
+                        <i class="fas fa-check-circle text-liceo-green mt-1"></i>
+                        Informe de personalidad
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-700">
+                        <i class="fas fa-check-circle text-liceo-green mt-1"></i>
+                        Fotocopia carnet de identidad del alumno/a
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-700">
+                        <i class="fas fa-check-circle text-liceo-green mt-1"></i>
+                        Fotocopia carnet de identidad del apoderado/a
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-700">
+                        <i class="fas fa-check-circle text-liceo-green mt-1"></i>
+                        Certificado de residencia (si aplica)
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-liceo-yellow">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+                    <i class="fas fa-calendar-alt text-liceo-yellow"></i> Fechas Importantes
+                </h2>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4 border-b pb-4">
+                        <div class="bg-liceo-blue text-white text-center px-3 py-2 rounded-lg min-w-[56px]">
+                            <div class="text-xs font-bold">NOV</div>
+                            <div class="text-xl font-black">10</div>
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-800">Inicio de postulaciones</p>
+                            <p class="text-gray-500 text-sm">Apertura oficial del proceso</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 border-b pb-4">
+                        <div class="bg-liceo-yellow text-liceo-blue text-center px-3 py-2 rounded-lg min-w-[56px]">
+                            <div class="text-xs font-bold">DIC</div>
+                            <div class="text-xl font-black">15</div>
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-800">Cierre de postulaciones</p>
+                            <p class="text-gray-500 text-sm">Última fecha para entregar documentos</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="bg-liceo-green text-white text-center px-3 py-2 rounded-lg min-w-[56px]">
+                            <div class="text-xs font-bold">ENE</div>
+                            <div class="text-xl font-black">10</div>
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-800">Inicio de clases 2027</p>
+                            <p class="text-gray-500 text-sm">Año escolar 2027</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CTA Contacto -->
+        <div class="bg-gray-100 rounded-xl p-8 text-center">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">¿Tienes dudas sobre el proceso?</h3>
+            <p class="text-gray-600 mb-6">Nuestro equipo está disponible para orientarte.</p>
+            <a href="/contacto" class="bg-liceo-blue text-white font-bold py-3 px-8 rounded-full hover:bg-blue-800 transition inline-flex items-center gap-2">
+                <i class="fas fa-envelope"></i> Contáctanos
+            </a>
+        </div>
+
     </div>
 </Layout>

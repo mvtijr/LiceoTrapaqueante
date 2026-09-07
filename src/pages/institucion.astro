@@ -1,8 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
-
-<Layout title="Liceo Trapaqueante - Nuestra Institución">
+<Layout 
+    title="Liceo Trapaqueante - Nuestra Institución"
+    description="Conoce la historia, misión, visión y equipo directivo del Liceo Trapaqueante de Tirúa."
+>
+    <!-- Header -->
     <div class="bg-gray-100 py-12 border-b border-gray-200">
         <div class="max-w-6xl mx-auto px-4 text-center">
             <h1 class="text-4xl font-bold text-liceo-blue mb-4">Nuestra Institución</h1>
@@ -10,37 +13,130 @@ import Layout from '../layouts/Layout.astro';
         </div>
     </div>
 
-    <div class="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-12">
+    <!-- Historia -->
+    <div class="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div>
-            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center"><i class="fas fa-history text-liceo-yellow mr-3 text-3xl"></i> Nuestra Historia</h2>
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
+                <i class="fas fa-history text-liceo-yellow text-3xl"></i> Nuestra Historia
+            </h2>
             <p class="text-gray-600 mb-4 leading-relaxed">
-                El Liceo Trapaqueante nació con la convicción de entregar educación de excelencia a los jóvenes de Tirúa y sus alrededores. Desde nuestros inicios, hemos buscado integrar los conocimientos académicos tradicionales con el profundo respeto por nuestra tierra y la cultura Mapuche.
+                El Liceo Trapaqueante nació con la convicción de entregar educación de excelencia a los jóvenes de Tirúa y sus alrededores. Desde nuestros inicios, hemos buscado integrar los conocimientos académicos con el profundo respeto por nuestra tierra y la cultura Mapuche.
             </p>
             <p class="text-gray-600 leading-relaxed">
                 A lo largo de los años, hemos formado generaciones de estudiantes que hoy son un aporte fundamental para nuestra comuna y el país, siempre guiados por nuestros valores institucionales.
             </p>
         </div>
         <div>
-            <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="Estudiantes en clases" class="rounded-lg shadow-lg">
+            <img 
+                src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" 
+                alt="Estudiantes en clases" 
+                class="rounded-xl shadow-lg w-full object-cover h-72"
+            >
         </div>
     </div>
 
+    <!-- Misión y Visión -->
     <div class="bg-white py-16">
         <div class="max-w-6xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div class="bg-gray-50 p-8 rounded-lg border-l-4 border-liceo-blue shadow-sm">
-                    <h3 class="text-2xl font-bold text-liceo-blue mb-4">Misión</h3>
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Misión y Visión</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="bg-gray-50 p-8 rounded-xl border-l-4 border-liceo-blue shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i class="fas fa-bullseye text-liceo-blue text-2xl"></i>
+                        <h3 class="text-2xl font-bold text-liceo-blue">Misión</h3>
+                    </div>
                     <p class="text-gray-700 leading-relaxed">
                         Entregar una educación integral y de calidad, que promueva el desarrollo intelectual, físico, valórico y social de nuestros estudiantes, respetando la diversidad y fomentando el arraigo cultural para que sean agentes de cambio positivo en la sociedad.
                     </p>
                 </div>
-                <div class="bg-gray-50 p-8 rounded-lg border-l-4 border-liceo-green shadow-sm">
-                    <h3 class="text-2xl font-bold text-liceo-green mb-4">Visión</h3>
+                <div class="bg-gray-50 p-8 rounded-xl border-l-4 border-liceo-green shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i class="fas fa-eye text-liceo-green text-2xl"></i>
+                        <h3 class="text-2xl font-bold text-liceo-green">Visión</h3>
+                    </div>
                     <p class="text-gray-700 leading-relaxed">
                         Ser reconocidos como el principal centro educativo de Tirúa, destacando por nuestra excelencia académica, el rescate de nuestras raíces y la formación de líderes íntegros, comprometidos con el desarrollo sostenible de su comunidad y el mundo.
                     </p>
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Valores -->
+    <div class="bg-liceo-blue text-white py-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Nuestros Valores</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="p-4">
+                    <i class="fas fa-handshake text-liceo-yellow text-4xl mb-3"></i>
+                    <h4 class="font-bold text-lg">Respeto</h4>
+                    <p class="text-blue-200 text-sm mt-1">Hacia las personas y nuestra cultura</p>
+                </div>
+                <div class="p-4">
+                    <i class="fas fa-star text-liceo-yellow text-4xl mb-3"></i>
+                    <h4 class="font-bold text-lg">Excelencia</h4>
+                    <p class="text-blue-200 text-sm mt-1">Compromiso con la calidad</p>
+                </div>
+                <div class="p-4">
+                    <i class="fas fa-users text-liceo-yellow text-4xl mb-3"></i>
+                    <h4 class="font-bold text-lg">Comunidad</h4>
+                    <p class="text-blue-200 text-sm mt-1">Juntos somos más fuertes</p>
+                </div>
+                <div class="p-4">
+                    <i class="fas fa-leaf text-liceo-yellow text-4xl mb-3"></i>
+                    <h4 class="font-bold text-lg">Identidad</h4>
+                    <p class="text-blue-200 text-sm mt-1">Raíces Mapuche como fortaleza</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Equipo Directivo -->
+    <div class="max-w-6xl mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-4">Equipo Directivo</h2>
+        <p class="text-center text-gray-500 mb-12">Las personas que lideran nuestra comunidad educativa</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+            <!-- Director/a -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden text-center border-t-4 border-liceo-blue hover:shadow-xl transition">
+                <div class="bg-liceo-blue h-24 flex items-center justify-center">
+                    <i class="fas fa-user-tie text-5xl text-white opacity-60"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800">Nombre Apellido</h3>
+                    <p class="text-liceo-blue font-semibold mt-1">Director/a</p>
+                    <p class="text-gray-500 text-sm mt-3">Responsable de la gestión y liderazgo institucional del Liceo.</p>
+                </div>
+            </div>
+
+            <!-- Jefe de UTP -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden text-center border-t-4 border-liceo-green hover:shadow-xl transition">
+                <div class="bg-liceo-green h-24 flex items-center justify-center">
+                    <i class="fas fa-user-tie text-5xl text-white opacity-60"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800">Nombre Apellido</h3>
+                    <p class="text-liceo-green font-semibold mt-1">Jefe/a UTP</p>
+                    <p class="text-gray-500 text-sm mt-3">Lidera los procesos técnico-pedagógicos del establecimiento.</p>
+                </div>
+            </div>
+
+            <!-- Inspector General -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden text-center border-t-4 border-liceo-red hover:shadow-xl transition">
+                <div class="bg-liceo-red h-24 flex items-center justify-center">
+                    <i class="fas fa-user-tie text-5xl text-white opacity-60"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800">Nombre Apellido</h3>
+                    <p class="text-liceo-red font-semibold mt-1">Inspector/a General</p>
+                    <p class="text-gray-500 text-sm mt-3">Vela por la convivencia escolar y la disciplina del establecimiento.</p>
+                </div>
+            </div>
+
+        </div>
+        <p class="text-center text-gray-400 text-sm mt-8">
+            <i class="fas fa-info-circle mr-1"></i> 
+            Los nombres del equipo serán actualizados próximamente.
+        </p>
     </div>
 </Layout>
