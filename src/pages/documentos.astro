@@ -1,0 +1,94 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout 
+    title="Liceo Trapaqueante - Documentos Oficiales"
+    description="Descarga los documentos oficiales, reglamentos y protocolos del Liceo Trapaqueante de Tirúa."
+>
+    <div class="bg-gray-100 py-12 border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h1 class="text-4xl font-bold text-liceo-blue mb-4">Documentos Oficiales</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Información pública y normativas que rigen nuestra comunidad escolar.</p>
+        </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- Documentos Institucionales -->
+            <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-liceo-blue">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+                    <i class="fas fa-file-signature text-liceo-blue"></i> Normativa Institucional
+                </h2>
+                <div class="space-y-4">
+                    <a href="#" class="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition border border-gray-200 group">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-file-pdf text-red-500 text-2xl"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-800 group-hover:text-liceo-blue transition">Proyecto Educativo Institucional (PEI)</h4>
+                                <p class="text-xs text-gray-500">Actualizado 2026</p>
+                            </div>
+                        </div>
+                        <i class="fas fa-download text-gray-400 group-hover:text-liceo-blue"></i>
+                    </a>
+
+                    <a href="#" class="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition border border-gray-200 group">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-file-pdf text-red-500 text-2xl"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-800 group-hover:text-liceo-blue transition">Reglamento Interno y Convivencia</h4>
+                                <p class="text-xs text-gray-500">Manual RICE 2026</p>
+                            </div>
+                        </div>
+                        <i class="fas fa-download text-gray-400 group-hover:text-liceo-blue"></i>
+                    </a>
+                    
+                    <a href="#" class="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition border border-gray-200 group">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-file-pdf text-red-500 text-2xl"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-800 group-hover:text-liceo-blue transition">Reglamento de Evaluación</h4>
+                                <p class="text-xs text-gray-500">Decreto 67</p>
+                            </div>
+                        </div>
+                        <i class="fas fa-download text-gray-400 group-hover:text-liceo-blue"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Protocolos -->
+            <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-liceo-red">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+                    <i class="fas fa-shield-alt text-liceo-red"></i> Protocolos de Acción
+                </h2>
+                <div class="space-y-4">
+                    <a href="#" class="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition border border-gray-200 group">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-file-pdf text-red-500 text-2xl"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-800 group-hover:text-liceo-red transition">Protocolo de Accidentes Escolares</h4>
+                            </div>
+                        </div>
+                        <i class="fas fa-download text-gray-400 group-hover:text-liceo-red"></i>
+                    </a>
+
+                    <a href="#" class="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition border border-gray-200 group">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-file-pdf text-red-500 text-2xl"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-800 group-hover:text-liceo-red transition">Protocolo Bullying y Ciberacoso</h4>
+                            </div>
+                        </div>
+                        <i class="fas fa-download text-gray-400 group-hover:text-liceo-red"></i>
+                    </a>
+                </div>
+                
+                <div class="mt-8 p-4 bg-yellow-50 rounded-lg border border-yellow-200 text-sm text-yellow-800 flex items-start gap-3">
+                    <i class="fas fa-info-circle mt-1"></i>
+                    <p>Estos documentos son de carácter público. Si necesitas un documento que no se encuentra aquí, por favor solicítalo en secretaría o a través de nuestra página de <a href="/contacto" class="font-bold underline hover:text-yellow-600">contacto</a>.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</Layout>

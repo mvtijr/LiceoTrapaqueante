@@ -1,0 +1,69 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout 
+    title="Liceo Trapaqueante - Galería de Imágenes"
+    description="Galería de imágenes del Liceo Trapaqueante de Tirúa. Conoce nuestras instalaciones y actividades."
+>
+    <div class="bg-gray-800 py-12 border-b-4 border-liceo-yellow text-white">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h1 class="text-4xl font-bold mb-4">Galería de Imágenes</h1>
+            <p class="text-lg text-gray-300 max-w-2xl mx-auto">Un recorrido visual por nuestras instalaciones y la vida escolar.</p>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 py-16">
+        
+        <p class="text-center text-gray-500 mb-10">
+            <i class="fas fa-camera text-2xl mb-2 block"></i>
+            Próximamente actualizaremos esta galería con fotografías reales de nuestra comunidad.
+        </p>
+
+        <!-- Galería Grid (Masonry style approx) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            
+            <div class="group relative overflow-hidden rounded-lg shadow-sm">
+                <img src="/frontis.jpg" alt="Frontis" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <span class="text-white font-bold">Frontis del Liceo</span>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-lg shadow-sm">
+                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Alumnos" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <span class="text-white font-bold">Vida Escolar</span>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-lg shadow-sm">
+                <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Clases" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <span class="text-white font-bold">En el aula</span>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-lg shadow-sm">
+                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Acto" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <span class="text-white font-bold">Actos Cívicos</span>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-lg shadow-sm md:col-span-2">
+                <img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Deportes" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <span class="text-white font-bold">Actividades Deportivas</span>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-lg shadow-sm md:col-span-2">
+                <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Cultura" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <span class="text-white font-bold">Cultura Mapuche</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</Layout>
