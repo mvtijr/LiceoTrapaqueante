@@ -1,7 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
-<Layout title="Liceo Trapaqueante - Contacto">
+<Layout 
+    title="Liceo Trapaqueante - Contacto"
+    description="Comunícate con el Liceo Trapaqueante de Tirúa. Envíanos un mensaje, encuéntranos en el mapa o llámanos."
+>
     <div class="bg-gray-100 py-12 border-b border-gray-200">
         <div class="max-w-6xl mx-auto px-4 text-center">
             <h1 class="text-4xl font-bold text-liceo-blue mb-4">Contacto</h1>
@@ -10,33 +13,77 @@ import Layout from '../layouts/Layout.astro';
     </div>
 
     <div class="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-12">
+
+        <!-- Formulario de Contacto -->
         <div class="bg-white p-8 rounded-lg shadow-md border-t-4 border-liceo-yellow">
             <h2 class="text-2xl font-bold text-gray-800 mb-6">Envíanos un Mensaje</h2>
-            <form action="https://formspree.io/f/tu_codigo_aqui" method="POST" class="space-y-4">
+            <form action="https://formspree.io/f/REEMPLAZA_CON_TU_ID" method="POST" class="space-y-4" id="contactForm">
                 <div>
-                    <label class="block text-gray-700 font-bold mb-2">Nombre completo</label>
-                    <input type="text" name="name" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-liceo-blue">
+                    <label class="block text-gray-700 font-bold mb-2">Nombre completo *</label>
+                    <input type="text" name="name" required placeholder="Ej: Juan Pérez" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-liceo-blue">
                 </div>
                 <div>
-                    <label class="block text-gray-700 font-bold mb-2">Correo Electrónico</label>
-                    <input type="email" name="email" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-liceo-blue">
+                    <label class="block text-gray-700 font-bold mb-2">Correo Electrónico *</label>
+                    <input type="email" name="email" required placeholder="correo@ejemplo.com" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-liceo-blue">
                 </div>
                 <div>
-                    <label class="block text-gray-700 font-bold mb-2">Mensaje</label>
-                    <textarea name="message" rows="4" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-liceo-blue"></textarea>
+                    <label class="block text-gray-700 font-bold mb-2">Asunto</label>
+                    <select name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-liceo-blue">
+                        <option value="Consulta General">Consulta General</option>
+                        <option value="Admisión">Proceso de Admisión</option>
+                        <option value="Matrícula">Matrícula</option>
+                        <option value="Otro">Otro</option>
+                    </select>
                 </div>
-                <button type="submit" class="bg-liceo-blue text-white font-bold py-3 px-6 rounded-md hover:bg-blue-800 transition w-full">Enviar Mensaje</button>
+                <div>
+                    <label class="block text-gray-700 font-bold mb-2">Mensaje *</label>
+                    <textarea name="message" rows="4" required placeholder="Escribe tu mensaje aquí..." class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-liceo-blue"></textarea>
+                </div>
+                <button type="submit" class="bg-liceo-blue text-white font-bold py-3 px-6 rounded-md hover:bg-blue-800 transition w-full flex items-center justify-center gap-2">
+                    <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                </button>
             </form>
         </div>
-        
-        <div class="space-y-8">
-            <div class="bg-white p-8 rounded-lg shadow-md border-t-4 border-liceo-green">
-                <h3 class="text-xl font-bold mb-4 text-gray-800"><i class="fas fa-map-marker-alt text-liceo-red mr-2"></i> Nuestra Ubicación</h3>
-                <p class="text-gray-600">Tirúa, Región del Biobío, Chile.</p>
+
+        <!-- Info de Contacto y Mapa -->
+        <div class="space-y-6">
+            <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-liceo-blue">
+                <h3 class="text-xl font-bold mb-4 text-gray-800">Información de Contacto</h3>
+                <div class="space-y-3">
+                    <p class="text-gray-600 flex items-start gap-3">
+                        <i class="fas fa-map-marker-alt text-liceo-red mt-1 w-5 text-center"></i>
+                        <span>Tirúa, Región del Biobío, Chile</span>
+                    </p>
+                    <p class="text-gray-600 flex items-start gap-3">
+                        <i class="fas fa-phone text-liceo-blue mt-1 w-5 text-center"></i>
+                        <span>+56 9 1234 5678</span>
+                    </p>
+                    <p class="text-gray-600 flex items-start gap-3">
+                        <i class="fas fa-envelope text-liceo-green mt-1 w-5 text-center"></i>
+                        <span>contacto@liceotrapaqueante.cl</span>
+                    </p>
+                    <p class="text-gray-600 flex items-start gap-3">
+                        <i class="fas fa-clock text-liceo-yellow mt-1 w-5 text-center"></i>
+                        <span>Lunes a Viernes: 8:00 - 17:00 hrs</span>
+                    </p>
+                </div>
             </div>
-            <div class="bg-white p-8 rounded-lg shadow-md border-t-4 border-liceo-blue">
-                <h3 class="text-xl font-bold mb-4 text-gray-800"><i class="fas fa-phone text-liceo-blue mr-2"></i> Teléfono</h3>
-                <p class="text-gray-600">+56 9 1234 5678</p>
+
+            <!-- Mapa embebido de Tirúa -->
+            <div class="bg-white p-4 rounded-lg shadow-md border-t-4 border-liceo-green overflow-hidden">
+                <h3 class="text-xl font-bold mb-4 text-gray-800"><i class="fas fa-map mr-2 text-liceo-green"></i>Encuéntranos aquí</h3>
+                <div class="rounded-lg overflow-hidden">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345!2d-73.4853!3d-38.3414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9614e0c3a52a1c23%3A0xb65f7e2e1e9a2a4!2sTir%C3%BAa%2C%20Arauc%C3%ADa%2C%20Chile!5e0!3m2!1ses!2scl!4v1234567890"
+                        width="100%"
+                        height="250"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Mapa Tirúa"
+                    ></iframe>
+                </div>
             </div>
         </div>
     </div>

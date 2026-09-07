@@ -2,18 +2,33 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Liceo Trapaqueante - Tirúa | Inicio">
+<Layout 
+    title="Liceo Trapaqueante - Tirúa | Inicio"
+    description="Liceo Trapaqueante de Tirúa — Educación integral con identidad cultural Mapuche. Conoce nuestro proceso de admisión y comunidad escolar."
+>
+    <!-- Banner de Anuncio Importante -->
+    <div class="bg-liceo-yellow text-liceo-blue py-2 px-4 text-center font-bold text-sm">
+        <i class="fas fa-bullhorn mr-2"></i>
+        ¡Proceso de Matrícula 2027 abierto! 
+        <a href="/admision" class="underline hover:opacity-75 ml-1">Conoce los requisitos →</a>
+    </div>
+
     <!-- Sección Principal (Hero) -->
     <div class="relative bg-liceo-blue text-white">
         <div class="absolute inset-0">
-            <img class="w-full h-full object-cover opacity-20" src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Estudiantes">
+            <img class="w-full h-full object-cover opacity-20" src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Estudiantes Liceo Trapaqueante">
         </div>
         <div class="relative max-w-6xl mx-auto px-4 py-24 md:py-32 flex flex-col items-center text-center">
             <h1 class="text-4xl md:text-5xl font-bold mb-4">Bienvenidos al Liceo Trapaqueante</h1>
             <p class="text-xl mb-8 max-w-2xl">Educación integral, respetando nuestras raíces y formando los líderes del mañana en Tirúa.</p>
-            <a href="/admision" class="bg-liceo-yellow text-liceo-blue font-bold py-3 px-8 rounded-full hover:bg-yellow-300 transition transform hover:scale-105 shadow-lg border-2 border-liceo-yellow">
-                Proceso de Admisión
-            </a>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="/admision" class="bg-liceo-yellow text-liceo-blue font-bold py-3 px-8 rounded-full hover:bg-yellow-300 transition transform hover:scale-105 shadow-lg">
+                    Proceso de Admisión
+                </a>
+                <a href="/noticias" class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-liceo-blue transition transform hover:scale-105 shadow-lg">
+                    Ver Noticias
+                </a>
+            </div>
         </div>
     </div>
 
@@ -36,6 +51,42 @@ import Layout from '../layouts/Layout.astro';
                 <h3 class="text-xl font-bold mb-2">Comunidad</h3>
                 <p class="text-gray-600">Fomentamos la convivencia armónica, la responsabilidad y la solidaridad.</p>
             </div>
+        </div>
+    </div>
+
+    <!-- Sección Últimas Noticias -->
+    <div class="bg-gray-100 py-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center mb-10">
+                <h2 class="text-3xl font-bold text-gray-800">Últimas Noticias</h2>
+                <a href="/noticias" class="text-liceo-blue font-bold hover:underline">Ver todas →</a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-md p-6 border-t-4 border-liceo-yellow hover:shadow-xl transition">
+                    <span class="text-xs text-gray-500 uppercase tracking-wider">07 Sep 2026</span>
+                    <h3 class="font-bold text-gray-800 mt-1 mb-3">Bienvenidos al nuevo sitio web del Liceo</h3>
+                    <a href="/noticias/bienvenidos" class="text-liceo-blue font-semibold hover:underline text-sm">Leer más →</a>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 border-t-4 border-liceo-blue hover:shadow-xl transition flex flex-col justify-center items-center text-center text-gray-400">
+                    <i class="fas fa-newspaper text-4xl mb-3"></i>
+                    <p class="text-sm">Próximas noticias aparecerán aquí</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 border-t-4 border-liceo-green hover:shadow-xl transition flex flex-col justify-center items-center text-center text-gray-400">
+                    <i class="fas fa-newspaper text-4xl mb-3"></i>
+                    <p class="text-sm">Próximas noticias aparecerán aquí</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Llamado a la Acción: Contacto -->
+    <div class="bg-liceo-blue text-white py-16">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">¿Tienes alguna consulta?</h2>
+            <p class="text-lg mb-8 text-blue-200">Nuestro equipo está disponible para orientarte a ti y a tu familia en el proceso de admisión.</p>
+            <a href="/contacto" class="bg-liceo-yellow text-liceo-blue font-bold py-3 px-10 rounded-full hover:bg-yellow-300 transition transform hover:scale-105 shadow-lg">
+                Contáctanos
+            </a>
         </div>
     </div>
 </Layout>
