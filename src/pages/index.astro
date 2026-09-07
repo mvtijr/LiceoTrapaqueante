@@ -25,8 +25,8 @@ import Layout from '../layouts/Layout.astro';
                 <a href="/admision" class="bg-liceo-yellow text-liceo-blue font-bold py-3 px-8 rounded-full hover:bg-yellow-300 transition transform hover:scale-105 shadow-lg">
                     Proceso de Admisión
                 </a>
-                <a href="/noticias" class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-liceo-blue transition transform hover:scale-105 shadow-lg">
-                    Ver Noticias
+                <a href="https://www.instagram.com/liceotrapaqueante/" target="_blank" rel="noopener noreferrer" class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-liceo-blue transition transform hover:scale-105 shadow-lg">
+                    Nuestro Instagram
                 </a>
             </div>
         </div>
@@ -54,27 +54,28 @@ import Layout from '../layouts/Layout.astro';
         </div>
     </div>
 
-    <!-- Sección Últimas Noticias -->
+    <!-- Sección Instagram Feed -->
     <div class="bg-gray-100 py-16">
         <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-between items-center mb-10">
-                <h2 class="text-3xl font-bold text-gray-800">Últimas Noticias</h2>
-                <a href="/noticias" class="text-liceo-blue font-bold hover:underline">Ver todas →</a>
+            <div class="flex justify-between items-center mb-10 text-center md:text-left">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-800 flex items-center justify-center md:justify-start gap-3">
+                        <i class="fab fa-instagram text-transparent bg-clip-text bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500"></i>
+                        Últimas Novedades
+                    </h2>
+                    <p class="text-gray-600 mt-2">Síguenos en nuestro Instagram oficial</p>
+                </div>
+                <a href="https://www.instagram.com/liceotrapaqueante/" target="_blank" rel="noopener noreferrer" class="hidden md:inline-block text-liceo-blue font-bold hover:underline">Ir a Instagram →</a>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-white rounded-lg shadow-md p-6 border-t-4 border-liceo-yellow hover:shadow-xl transition">
-                    <span class="text-xs text-gray-500 uppercase tracking-wider">07 Sep 2026</span>
-                    <h3 class="font-bold text-gray-800 mt-1 mb-3">Bienvenidos al nuevo sitio web del Liceo</h3>
-                    <a href="/noticias/bienvenidos" class="text-liceo-blue font-semibold hover:underline text-sm">Leer más →</a>
-                </div>
-                <div class="bg-white rounded-lg shadow-md p-6 border-t-4 border-liceo-blue hover:shadow-xl transition flex flex-col justify-center items-center text-center text-gray-400">
-                    <i class="fas fa-newspaper text-4xl mb-3"></i>
-                    <p class="text-sm">Próximas noticias aparecerán aquí</p>
-                </div>
-                <div class="bg-white rounded-lg shadow-md p-6 border-t-4 border-liceo-green hover:shadow-xl transition flex flex-col justify-center items-center text-center text-gray-400">
-                    <i class="fas fa-newspaper text-4xl mb-3"></i>
-                    <p class="text-sm">Próximas noticias aparecerán aquí</p>
-                </div>
+            
+            <!-- Elfsight Instagram Feed -->
+            <div class="bg-white p-4 rounded-xl shadow-md border-t-4 border-liceo-red overflow-hidden">
+                <script src="https://elfsightcdn.com/platform.js" async></script>
+                <div class="elfsight-app-05272784-d07f-4776-92a1-e29110348983" data-elfsight-app-lazy></div>
+            </div>
+            
+            <div class="mt-6 text-center md:hidden">
+                <a href="https://www.instagram.com/liceotrapaqueante/" target="_blank" rel="noopener noreferrer" class="text-liceo-blue font-bold hover:underline">Ir a Instagram →</a>
             </div>
         </div>
     </div>
