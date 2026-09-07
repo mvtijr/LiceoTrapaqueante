@@ -1,0 +1,52 @@
+---
+const currentPath = Astro.url.pathname;
+---
+<nav class="bg-liceo-blue text-white shadow-lg border-b-4 border-liceo-yellow">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between items-center py-3">
+            <a href="/" class="flex items-center space-x-3 group">
+                <img src="/logo.jpg" alt="Logo Liceo Trapaqueante" class="h-14 w-auto rounded-sm">
+                <div class="flex flex-col">
+                    <span class="font-bold text-xl leading-tight group-hover:text-liceo-yellow transition">Liceo Trapaqueante</span>
+                    <span class="text-liceo-yellow text-sm font-bold tracking-widest">TIRÚA</span>
+                </div>
+            </a>
+            
+            <!-- Menú Desktop -->
+            <div class="hidden md:flex space-x-6 font-semibold">
+                <a href="/" class={`hover:text-liceo-yellow transition ${currentPath === '/' ? 'text-liceo-yellow' : ''}`}>Inicio</a>
+                <a href="/institucion" class={`hover:text-liceo-yellow transition ${currentPath.includes('/institucion') ? 'text-liceo-yellow' : ''}`}>Nuestra Institución</a>
+                <a href="/admision" class={`hover:text-liceo-yellow transition ${currentPath.includes('/admision') ? 'text-liceo-yellow' : ''}`}>Admisión</a>
+                <a href="/noticias" class={`hover:text-liceo-yellow transition ${currentPath.includes('/noticias') ? 'text-liceo-yellow' : ''}`}>Noticias</a>
+                <a href="/contacto" class={`hover:text-liceo-yellow transition ${currentPath.includes('/contacto') ? 'text-liceo-yellow' : ''}`}>Contacto</a>
+            </div>
+            
+            <!-- Botón Menú Móvil -->
+            <div class="md:hidden">
+                <button id="mobile-menu-btn" class="text-white hover:text-liceo-yellow focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Menú Móvil Desplegable -->
+    <div id="mobile-menu" class="hidden md:hidden bg-liceo-blue border-t border-blue-800">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="/" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow">Inicio</a>
+            <a href="/institucion" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow">Institución</a>
+            <a href="/admision" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow">Admisión</a>
+            <a href="/noticias" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow">Noticias</a>
+            <a href="/contacto" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow">Contacto</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    if (btn && menu) {
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    }
+</script>

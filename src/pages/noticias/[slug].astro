@@ -1,0 +1,41 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+    const noticias = await getCollection('noticias');
+    return noticias.map(noticia => ({
+        params: { slug: noticia.slug },
+        props: { noticia },
+    }));
+}
+
+const { noticia } = Astro.props;
+const { Content } = await noticia.render();
+---
+<Layout title={`Liceo Trapaqueante - ${noticia.data.title}`}>
+    <div class="bg-liceo-blue py-12 border-b-4 border-liceo-yellow text-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <h1 class="text-3xl font-bold mb-2">{noticia.data.title}</h1>
+            <p class="text-liceo-yellow font-semibold">{noticia.data.date.toLocaleDateString('es-CL')} {noticia.data.author && `| Por: ${noticia.data.author}`}</p>
+        </div>
+    </div>
+    
+    <div class="max-w-4xl mx-auto px-4 py-16">
+        <article class="markdown-body">
+            <Content />
+        </article>
+        
+        <div class="mt-12 pt-8 border-t border-gray-200">
+            <a href="/noticias" class="text-liceo-blue font-bold hover:underline">&larr; Volver a noticias</a>
+        </div>
+    </div>
+</Layout>
+
+<style is:global>
+    .markdown-body h1 { @apply text-3xl font-bold text-gray-900 mt-8 mb-4; }
+    .markdown-body h2 { @apply text-2xl font-bold text-gray-800 mt-6 mb-4; }
+    .markdown-body p { @apply text-gray-700 leading-relaxed mb-4; }
+    .markdown-body ul { @apply list-disc pl-6 mb-4 text-gray-700 space-y-2; }
+    .markdown-body strong { @apply font-bold text-gray-900; }
+</style>

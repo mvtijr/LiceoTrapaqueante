@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@theme {
+  --color-liceo-blue: #1657b8;
+  --color-liceo-yellow: #fde000;
+  --color-liceo-red: #d91212;
+  --color-liceo-green: #3a9332;
+}
