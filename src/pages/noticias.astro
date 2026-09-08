@@ -70,13 +70,31 @@ import Layout from '../layouts/Layout.astro';
                         // Mostrar las primeras 9 noticias en la página dedicada
                         const items = data.items.slice(0, 9);
                         
-                        items.forEach(item => {
+                        // Imágenes de stock educativas
+                        const stockImages = [
+                            "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                            "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                            "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                            "https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                            "https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                            "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        ];
+
+                        items.forEach((item, index) => {
                             // Limpiar tags HTML de la descripción
                             const tempDiv = document.createElement('div');
                             tempDiv.innerHTML = item.description;
                             let descriptionText = tempDiv.textContent || tempDiv.innerText || '';
                             descriptionText = descriptionText.length > 120 ? descriptionText.substring(0, 120) + '...' : descriptionText;
                             
+                            // Extraer imagen del content si existe
+                            let imageUrl = stockImages[index % stockImages.length];
+                            const imgRegex = /<img[^>]+src="([^">]+)"/;
+                            const match = item.content.match(imgRegex);
+                            if (match && match[1]) {
+                                imageUrl = match[1];
+                            }
+
                             // Formatear fecha
                             const pubDate = new Date(item.pubDate);
                             const dateString = pubDate.toLocaleDateString('es-CL', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -85,16 +103,21 @@ import Layout from '../layouts/Layout.astro';
                             card.href = item.link;
                             card.target = "_blank";
                             card.rel = "noopener noreferrer";
-                            card.className = "bg-white p-6 rounded-lg shadow-md border-t-4 border-liceo-blue hover:shadow-xl hover:-translate-y-1 transition duration-300 block group";
+                            card.className = "bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition duration-300 block group overflow-hidden flex flex-col";
                             
                             card.innerHTML = `
-                                <div class="flex items-center gap-2 text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">
-                                    <i class="fas fa-calendar-alt text-liceo-yellow"></i>
-                                    <span>${dateString}</span>
+                                <div class="h-48 overflow-hidden relative">
+                                    <img src="${imageUrl}" alt="Noticia MINEDUC" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                                 </div>
-                                <h3 class="font-bold text-lg text-gray-800 mb-3 group-hover:text-liceo-blue transition">${item.title}</h3>
-                                <p class="text-sm text-gray-600 mb-4 line-clamp-3">${descriptionText}</p>
-                                <span class="text-liceo-blue font-semibold text-sm group-hover:underline">Leer comunicado oficial →</span>
+                                <div class="p-6 flex-grow flex flex-col">
+                                    <div class="flex items-center gap-2 text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">
+                                        <i class="fas fa-calendar-alt text-liceo-yellow"></i>
+                                        <span>${dateString}</span>
+                                    </div>
+                                    <h3 class="font-bold text-lg text-gray-800 mb-3 group-hover:text-liceo-blue transition">${item.title}</h3>
+                                    <p class="text-sm text-gray-600 mb-4 line-clamp-3">${descriptionText}</p>
+                                    <span class="text-liceo-blue font-semibold text-sm group-hover:underline mt-auto">Leer comunicado oficial →</span>
+                                </div>
                             `;
                             
                             container.appendChild(card);
