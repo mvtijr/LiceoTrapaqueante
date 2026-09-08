@@ -1,5 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import galeriaData from '../data/galeria_general.json';
+
+const fotos = galeriaData?.fotos || [];
 ---
 <Layout 
     title="Liceo Trapaqueante - Galería de Imágenes"
@@ -63,6 +66,13 @@ import Layout from '../layouts/Layout.astro';
                     <span class="text-white font-bold">Cultura Mapuche</span>
                 </div>
             </div>
+
+            <!-- Fotos Dinámicas desde CMS -->
+            {fotos.map((foto) => (
+                <div class="group relative overflow-hidden rounded-lg shadow-sm">
+                    <img src={foto} alt="Galería CMS" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500">
+                </div>
+            ))}
 
         </div>
     </div>

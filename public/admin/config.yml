@@ -1,0 +1,34 @@
+backend:
+  name: github
+  repo: mvtijr/LiceoTrapaqueante
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+locale: "es"
+
+collections:
+  - name: "galerias"
+    label: "Galerías de Fotos"
+    files:
+      - file: "src/data/galeria_general.json"
+        label: "1. Galería General (Página Vida Escolar)"
+        name: "galeria_general"
+        fields:
+          - { label: "Fotos", name: "fotos", widget: "list", field: { label: "Foto", name: "image", widget: "image" } }
+      - file: "src/data/galeria_enfermeria.json"
+        label: "2. Galería Enfermería"
+        name: "galeria_enfermeria"
+        fields:
+          - { label: "Fotos", name: "fotos", widget: "list", field: { label: "Foto", name: "image", widget: "image" } }
+      - file: "src/data/galeria_acuicultura.json"
+        label: "3. Galería Acuicultura"
+        name: "galeria_acuicultura"
+        fields:
+          - { label: "Fotos", name: "fotos", widget: "list", field: { label: "Foto", name: "image", widget: "image" } }
+      - file: "src/data/galeria_ch.json"
+        label: "4. Galería Científico Humanista"
+        name: "galeria_ch"
+        fields:
+          - { label: "Fotos", name: "fotos", widget: "list", field: { label: "Foto", name: "image", widget: "image" } }

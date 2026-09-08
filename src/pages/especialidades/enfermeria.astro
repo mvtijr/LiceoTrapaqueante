@@ -1,5 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import enfermeriaData from '../../data/galeria_enfermeria.json';
+
+const fotos = enfermeriaData?.fotos || [];
 ---
 <Layout 
     title="Liceo Trapaqueante - Técnico en Enfermería"
@@ -54,25 +57,18 @@ import Layout from '../../layouts/Layout.astro';
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-4">Galería de Enfermería</h2>
             <p class="text-center text-gray-500 mb-10">Nuestros alumnos en clases y prácticas clínicas.</p>
             
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                <!-- Foto Principal -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8">
+                <!-- Foto Principal Estática -->
                 <div class="group relative overflow-hidden rounded-lg shadow-md md:col-span-2 md:row-span-2">
                     <img src="/enfermeria.jpg" alt="Alumnos Enfermería" class="w-full h-full min-h-[300px] object-cover object-top group-hover:scale-105 transition duration-500">
                 </div>
                 
-                <!-- Espacios para nuevas fotos -->
-                <div class="group relative overflow-hidden rounded-lg shadow-md bg-gray-200 flex items-center justify-center min-h-[200px]">
-                    <div class="text-center text-gray-400 p-4">
-                        <i class="fas fa-camera text-3xl mb-2 block"></i>
-                        <span class="text-sm">Espacio para nueva foto</span>
+                <!-- Fotos Dinámicas desde CMS -->
+                {fotos.map((foto) => (
+                    <div class="group relative overflow-hidden rounded-lg shadow-md min-h-[250px]">
+                        <img src={foto} alt="Galería" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
-                </div>
-                <div class="group relative overflow-hidden rounded-lg shadow-md bg-gray-200 flex items-center justify-center min-h-[200px]">
-                    <div class="text-center text-gray-400 p-4">
-                        <i class="fas fa-camera text-3xl mb-2 block"></i>
-                        <span class="text-sm">Espacio para nueva foto</span>
-                    </div>
-                </div>
+                ))}
             </div>
         </div>
     </div>
