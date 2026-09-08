@@ -1,7 +1,7 @@
 ---
 const currentPath = Astro.url.pathname;
 ---
-<nav class="bg-liceo-blue text-white shadow-lg border-b-4 border-liceo-yellow">
+<nav class="bg-liceo-blue text-white shadow-lg border-b-4 border-liceo-yellow relative z-50">
     <div class="max-w-7xl mx-auto px-4">
         <div class="flex justify-between items-center py-3">
             <a href="/" class="flex items-center space-x-3 group">
@@ -13,16 +13,36 @@ const currentPath = Astro.url.pathname;
             </a>
             
             <!-- Menú Desktop -->
-            <div class="hidden lg:flex font-semibold text-sm xl:text-base space-x-4 xl:space-x-6 items-center">
+            <div class="hidden xl:flex font-semibold text-base space-x-6 items-center">
                 <a href="/" class={`hover:text-liceo-yellow transition ${currentPath === '/' ? 'text-liceo-yellow' : ''}`}>Inicio</a>
-                <a href="/institucion" class={`hover:text-liceo-yellow transition ${currentPath.includes('/institucion') ? 'text-liceo-yellow' : ''}`}>Institución</a>
-                <a href="/pie" class={`hover:text-liceo-yellow transition ${currentPath.includes('/pie') ? 'text-liceo-yellow' : ''}`}>Equipo PIE</a>
+                
+                <!-- Dropdown Institución -->
+                <div class="relative group">
+                    <button class={`hover:text-liceo-yellow transition flex items-center gap-1 ${(currentPath.includes('/institucion') || currentPath.includes('/pie')) ? 'text-liceo-yellow' : ''}`}>
+                        Nosotros <i class="fas fa-chevron-down text-xs ml-1"></i>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-48 bg-white text-gray-800 rounded-md shadow-xl py-2 hidden group-hover:block border-t-4 border-liceo-blue">
+                        <a href="/institucion" class="block px-4 py-2 hover:bg-gray-100 hover:text-liceo-blue transition">Institución</a>
+                        <a href="/pie" class="block px-4 py-2 hover:bg-gray-100 hover:text-liceo-blue transition">Equipo PIE</a>
+                    </div>
+                </div>
+
                 <a href="/especialidades" class={`hover:text-liceo-yellow transition ${currentPath.includes('/especialidades') ? 'text-liceo-yellow' : ''}`}>Especialidades</a>
-                <a href="/documentos" class={`hover:text-liceo-yellow transition ${currentPath.includes('/documentos') ? 'text-liceo-yellow' : ''}`}>Documentos</a>
-                <a href="/calendario" class={`hover:text-liceo-yellow transition ${currentPath.includes('/calendario') ? 'text-liceo-yellow' : ''}`}>Calendario</a>
-                <a href="/galeria" class={`hover:text-liceo-yellow transition ${currentPath.includes('/galeria') ? 'text-liceo-yellow' : ''}`}>Galería</a>
+                
+                <!-- Dropdown Comunidad -->
+                <div class="relative group">
+                    <button class={`hover:text-liceo-yellow transition flex items-center gap-1 ${(currentPath.includes('/noticias') || currentPath.includes('/galeria') || currentPath.includes('/calendario') || currentPath.includes('/documentos')) ? 'text-liceo-yellow' : ''}`}>
+                        Comunidad <i class="fas fa-chevron-down text-xs ml-1"></i>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-48 bg-white text-gray-800 rounded-md shadow-xl py-2 hidden group-hover:block border-t-4 border-liceo-blue">
+                        <a href="/noticias" class="block px-4 py-2 hover:bg-gray-100 hover:text-liceo-blue transition">Noticias</a>
+                        <a href="/galeria" class="block px-4 py-2 hover:bg-gray-100 hover:text-liceo-blue transition">Galería</a>
+                        <a href="/calendario" class="block px-4 py-2 hover:bg-gray-100 hover:text-liceo-blue transition">Calendario Escolar</a>
+                        <a href="/documentos" class="block px-4 py-2 hover:bg-gray-100 hover:text-liceo-blue transition">Documentos</a>
+                    </div>
+                </div>
+
                 <a href="/admision" class={`hover:text-liceo-yellow transition ${currentPath.includes('/admision') ? 'text-liceo-yellow' : ''}`}>Admisión</a>
-                <a href="/noticias" class={`hover:text-liceo-yellow transition ${currentPath.includes('/noticias') ? 'text-liceo-yellow' : ''}`}>Noticias</a>
                 <a href="/contacto" class={`hover:text-liceo-yellow transition ${currentPath.includes('/contacto') ? 'text-liceo-yellow' : ''}`}>Contacto</a>
                 
                 <!-- Botón Webclass Desktop -->
@@ -32,7 +52,7 @@ const currentPath = Astro.url.pathname;
             </div>
             
             <!-- Botón Menú Móvil y Webclass Móvil -->
-            <div class="flex lg:hidden items-center gap-3">
+            <div class="flex xl:hidden items-center gap-3">
                 <a href="https://plataforma.webescuela.cl/sistema/webclass/" target="_blank" rel="noopener noreferrer" class="bg-liceo-yellow text-liceo-blue px-3 py-1.5 rounded text-sm font-bold shadow-sm">
                     Webclass
                 </a>
@@ -42,18 +62,25 @@ const currentPath = Astro.url.pathname;
             </div>
         </div>
     </div>
+    
     <!-- Menú Móvil Desplegable -->
-    <div id="mobile-menu" class="hidden lg:hidden bg-liceo-blue border-t border-blue-800">
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+    <div id="mobile-menu" class="hidden xl:hidden bg-liceo-blue border-t border-blue-800">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <a href="/" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800">Inicio</a>
-            <a href="/institucion" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800">Institución</a>
-            <a href="/pie" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800">Equipo PIE</a>
+            
+            <div class="px-3 py-2 text-base font-bold text-blue-200 mt-2">Nosotros</div>
+            <a href="/institucion" class="block pl-6 pr-3 py-2 text-sm font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800/50">Institución</a>
+            <a href="/pie" class="block pl-6 pr-3 py-2 text-sm font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800">Equipo PIE</a>
+            
             <a href="/especialidades" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800">Especialidades</a>
-            <a href="/documentos" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800">Documentos</a>
-            <a href="/calendario" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800">Calendario</a>
-            <a href="/galeria" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800">Galería</a>
-            <a href="/admision" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800">Admisión</a>
-            <a href="/noticias" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800">Noticias</a>
+            
+            <div class="px-3 py-2 text-base font-bold text-blue-200 mt-2">Comunidad</div>
+            <a href="/noticias" class="block pl-6 pr-3 py-2 text-sm font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800/50">Noticias</a>
+            <a href="/galeria" class="block pl-6 pr-3 py-2 text-sm font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800/50">Galería</a>
+            <a href="/calendario" class="block pl-6 pr-3 py-2 text-sm font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800/50">Calendario</a>
+            <a href="/documentos" class="block pl-6 pr-3 py-2 text-sm font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800">Documentos</a>
+            
+            <a href="/admision" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800 mt-2">Admisión</a>
             <a href="/contacto" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow">Contacto</a>
             
             <div class="mt-4 px-3 pb-3">
