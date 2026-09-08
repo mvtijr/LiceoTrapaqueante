@@ -5,44 +5,86 @@ import docData from '../data/documentos.json';
 const documentos = docData?.docs || [];
 ---
 <Layout 
-    title="Liceo Trapaqueante - Documentos Oficiales"
-    description="Descarga los documentos oficiales del Liceo Trapaqueante de Tirua."
+    title="Liceo Trapaqueante - Transparencia y Documentos"
+    description="Transparencia, Cuenta Pública, PME y descarga de documentos oficiales del Liceo Trapaqueante."
 >
+    <!-- Header -->
     <div class="bg-gray-100 py-12 border-b border-gray-200">
         <div class="max-w-6xl mx-auto px-4 text-center">
-            <h1 class="text-4xl font-bold text-liceo-blue mb-4">Documentos Oficiales</h1>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Información pública y normativas que rigen nuestra comunidad escolar.</p>
+            <h1 class="text-4xl font-bold text-liceo-blue mb-4">Transparencia y Documentos</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Información pública, normativas y gestión institucional a disposición de nuestra comunidad escolar.</p>
         </div>
     </div>
 
-    <div class="max-w-4xl mx-auto px-4 py-16">
+    <div class="max-w-5xl mx-auto px-4 py-16 space-y-12">
+        
+        <!-- Ley SEP / Gestión -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-white p-8 rounded-xl shadow-md border-l-4 border-liceo-green">
+            <div>
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Gestión y Cuenta Pública</h2>
+                <p class="text-gray-600 mb-4">Como establecimiento educacional público y Bicentenario, estamos comprometidos con la transparencia y el buen uso de los recursos de la Ley SEP (Subvención Escolar Preferencial).</p>
+                <p class="text-gray-600 text-sm">Los documentos institucionales como el Proyecto Educativo Institucional (PEI), el Reglamento Interno (RICE), el PME y la Cuenta Pública Anual son socializados con toda nuestra comunidad y están disponibles para su descarga a continuación.</p>
+            </div>
+            <div class="grid grid-cols-2 gap-4 text-center">
+                <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                    <i class="fas fa-chart-line text-3xl text-liceo-green mb-2"></i>
+                    <p class="font-bold text-gray-700 text-sm">Cuenta Pública</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                    <i class="fas fa-clipboard-list text-3xl text-liceo-blue mb-2"></i>
+                    <p class="font-bold text-gray-700 text-sm">Plan PME</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                    <i class="fas fa-balance-scale text-3xl text-liceo-red mb-2"></i>
+                    <p class="font-bold text-gray-700 text-sm">Normativas</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                    <i class="fas fa-search-dollar text-3xl text-liceo-yellow mb-2"></i>
+                    <p class="font-bold text-gray-700 text-sm">Transparencia</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Documentos Subidos por CMS -->
         <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-liceo-blue">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
-                <i class="fas fa-file-signature text-liceo-blue"></i> Archivos Disponibles
-            </h2>
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                    <i class="fas fa-file-signature text-liceo-blue"></i> Archivos Disponibles
+                </h2>
+                <span class="bg-blue-100 text-liceo-blue text-xs font-bold px-3 py-1 rounded-full hidden sm:inline-block">Actualizado Automáticamente</span>
+            </div>
+            
             <div class="space-y-4">
                 {documentos.length === 0 ? (
-                    <p class="text-gray-500 text-center py-8">Aún no hay documentos disponibles para descargar.</p>
+                    <div class="text-center py-10 bg-gray-50 rounded-lg border-2 border-dashed border-gray-300">
+                        <i class="fas fa-folder-open text-4xl text-gray-300 mb-3 block"></i>
+                        <p class="text-gray-500 font-medium">Aún no hay documentos disponibles para descargar.</p>
+                        <p class="text-sm text-gray-400 mt-1">Sube el RICE, Cuenta Pública o PEI desde el Panel de Administración.</p>
+                    </div>
                 ) : (
                     documentos.map((doc) => (
                         <a href={doc.file} target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition border border-gray-200 group">
-                            <div class="flex items-center gap-3">
-                                <i class="fas fa-file-pdf text-red-500 text-3xl"></i>
+                            <div class="flex items-center gap-4">
+                                <div class="bg-red-100 w-12 h-12 rounded flex items-center justify-center flex-shrink-0 group-hover:bg-red-200 transition">
+                                    <i class="fas fa-file-pdf text-red-600 text-2xl"></i>
+                                </div>
                                 <div>
-                                    <h4 class="font-bold text-gray-800 group-hover:text-liceo-blue transition">{doc.title}</h4>
-                                    {doc.desc && <p class="text-sm text-gray-500">{doc.desc}</p>}
+                                    <h4 class="font-bold text-gray-800 group-hover:text-liceo-blue transition text-lg">{doc.title}</h4>
+                                    {doc.desc && <p class="text-sm text-gray-500 mt-1">{doc.desc}</p>}
                                 </div>
                             </div>
-                            <i class="fas fa-download text-gray-400 group-hover:text-liceo-blue text-xl"></i>
+                            <div class="bg-white p-2 rounded-full shadow-sm group-hover:bg-liceo-blue group-hover:text-white transition hidden sm:block">
+                                <i class="fas fa-download text-gray-400 group-hover:text-white w-6 h-6 flex items-center justify-center"></i>
+                            </div>
                         </a>
                     ))
                 )}
             </div>
         </div>
 
-        <div class="mt-8 p-4 bg-yellow-50 rounded-lg border border-yellow-200 text-sm text-yellow-800 flex items-start gap-3">
+        <div class="p-4 bg-yellow-50 rounded-lg border border-yellow-200 text-sm text-yellow-800 flex items-start gap-3">
             <i class="fas fa-info-circle mt-1"></i>
-            <p>Estos documentos son de carácter público. Si necesitas un documento que no se encuentra aquí, por favor solicítalo en secretaría o a través de nuestra página de <a href="/contacto" class="font-bold underline hover:text-yellow-600">contacto</a>.</p>
+            <p>Estos documentos son de carácter público de acuerdo a la Ley de Transparencia. Si necesitas un documento o certificado específico que no se encuentra aquí, por favor solicítalo en secretaría o a través de nuestra página de <a href="/contacto" class="font-bold underline hover:text-yellow-600">contacto</a>.</p>
         </div>
     </div>
 </Layout>
