@@ -2,7 +2,7 @@
 const currentPath = Astro.url.pathname;
 ---
 <nav class="bg-liceo-blue text-white shadow-lg border-b-4 border-liceo-yellow">
-    <div class="max-w-6xl mx-auto px-4">
+    <div class="max-w-7xl mx-auto px-4">
         <div class="flex justify-between items-center py-3">
             <a href="/" class="flex items-center space-x-3 group">
                 <img src="/logo.png" alt="Logo Liceo Trapaqueante" class="h-14 w-auto rounded-sm">
@@ -13,36 +13,54 @@ const currentPath = Astro.url.pathname;
             </a>
             
             <!-- Menú Desktop -->
-            <div class="hidden md:flex space-x-4 font-semibold text-sm lg:text-base lg:space-x-6 items-center">
+            <div class="hidden lg:flex font-semibold text-sm xl:text-base space-x-4 xl:space-x-6 items-center">
                 <a href="/" class={`hover:text-liceo-yellow transition ${currentPath === '/' ? 'text-liceo-yellow' : ''}`}>Inicio</a>
                 <a href="/institucion" class={`hover:text-liceo-yellow transition ${currentPath.includes('/institucion') ? 'text-liceo-yellow' : ''}`}>Institución</a>
+                <a href="/pie" class={`hover:text-liceo-yellow transition ${currentPath.includes('/pie') ? 'text-liceo-yellow' : ''}`}>Equipo PIE</a>
                 <a href="/especialidades" class={`hover:text-liceo-yellow transition ${currentPath.includes('/especialidades') ? 'text-liceo-yellow' : ''}`}>Especialidades</a>
                 <a href="/documentos" class={`hover:text-liceo-yellow transition ${currentPath.includes('/documentos') ? 'text-liceo-yellow' : ''}`}>Documentos</a>
+                <a href="/calendario" class={`hover:text-liceo-yellow transition ${currentPath.includes('/calendario') ? 'text-liceo-yellow' : ''}`}>Calendario</a>
                 <a href="/galeria" class={`hover:text-liceo-yellow transition ${currentPath.includes('/galeria') ? 'text-liceo-yellow' : ''}`}>Galería</a>
                 <a href="/admision" class={`hover:text-liceo-yellow transition ${currentPath.includes('/admision') ? 'text-liceo-yellow' : ''}`}>Admisión</a>
                 <a href="/noticias" class={`hover:text-liceo-yellow transition ${currentPath.includes('/noticias') ? 'text-liceo-yellow' : ''}`}>Noticias</a>
                 <a href="/contacto" class={`hover:text-liceo-yellow transition ${currentPath.includes('/contacto') ? 'text-liceo-yellow' : ''}`}>Contacto</a>
+                
+                <!-- Botón Webclass Desktop -->
+                <a href="https://app.webclass.cl/" target="_blank" rel="noopener noreferrer" class="bg-liceo-yellow text-liceo-blue px-4 py-2 rounded-lg font-bold hover:bg-yellow-400 transition flex items-center gap-2 shadow-sm ml-2">
+                    <i class="fas fa-laptop-house"></i> Webclass
+                </a>
             </div>
             
-            <!-- Botón Menú Móvil -->
-            <div class="md:hidden">
-                <button id="mobile-menu-btn" class="text-white hover:text-liceo-yellow focus:outline-none">
+            <!-- Botón Menú Móvil y Webclass Móvil -->
+            <div class="flex lg:hidden items-center gap-3">
+                <a href="https://app.webclass.cl/" target="_blank" rel="noopener noreferrer" class="bg-liceo-yellow text-liceo-blue px-3 py-1.5 rounded text-sm font-bold shadow-sm">
+                    Webclass
+                </a>
+                <button id="mobile-menu-btn" class="text-white hover:text-liceo-yellow focus:outline-none ml-2">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
         </div>
     </div>
     <!-- Menú Móvil Desplegable -->
-    <div id="mobile-menu" class="hidden md:hidden bg-liceo-blue border-t border-blue-800">
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="/" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow">Inicio</a>
-            <a href="/institucion" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow">Institución</a>
-            <a href="/especialidades" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow">Especialidades</a>
-            <a href="/documentos" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow">Documentos</a>
-            <a href="/galeria" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow">Galería</a>
-            <a href="/admision" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow">Admisión</a>
-            <a href="/noticias" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow">Noticias</a>
+    <div id="mobile-menu" class="hidden lg:hidden bg-liceo-blue border-t border-blue-800">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+            <a href="/" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800">Inicio</a>
+            <a href="/institucion" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800">Institución</a>
+            <a href="/pie" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800">Equipo PIE</a>
+            <a href="/especialidades" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800">Especialidades</a>
+            <a href="/documentos" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800">Documentos</a>
+            <a href="/calendario" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800">Calendario</a>
+            <a href="/galeria" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800">Galería</a>
+            <a href="/admision" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800">Admisión</a>
+            <a href="/noticias" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800">Noticias</a>
             <a href="/contacto" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow">Contacto</a>
+            
+            <div class="mt-4 px-3 pb-3">
+                <a href="https://app.webclass.cl/" target="_blank" rel="noopener noreferrer" class="block w-full bg-liceo-yellow text-liceo-blue px-4 py-3 rounded-lg font-bold text-center">
+                    <i class="fas fa-laptop-house mr-2"></i> Ingresar a Webclass
+                </a>
+            </div>
         </div>
     </div>
 </nav>

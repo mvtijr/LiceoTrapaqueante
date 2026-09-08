@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout 
+    title="Liceo Trapaqueante - Equipo PIE"
+    description="Conoce nuestro Programa de Integración Escolar (PIE), brindando apoyo integral a nuestros estudiantes."
+>
+    <!-- Header -->
+    <div class="bg-gray-800 py-16 border-b-4 border-liceo-yellow relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" alt="Inclusión" class="w-full h-full object-cover" />
+        </div>
+        <div class="max-w-6xl mx-auto px-4 text-center relative z-10 text-white">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Programa de Integración Escolar (PIE)</h1>
+            <p class="text-xl max-w-3xl mx-auto text-gray-200">Educación inclusiva y apoyo multidisciplinario para que todos nuestros estudiantes alcancen su máximo potencial.</p>
+        </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 py-16 space-y-16">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl font-bold text-liceo-blue mb-6">¿Qué es el PIE?</h2>
+                <p class="text-gray-700 mb-4 text-lg">El Programa de Integración Escolar (PIE) es una estrategia inclusiva del sistema escolar, que tiene el propósito de entregar apoyos adicionales a los estudiantes que presentan Necesidades Educativas Especiales (NEE), ya sean de carácter permanente o transitorio.</p>
+                <p class="text-gray-700 mb-6 text-lg">En el Liceo Bicentenario Trapaqueante creemos firmemente que la diversidad enriquece nuestras aulas. Nuestro objetivo es favorecer la presencia y participación de todos los estudiantes en la sala de clases.</p>
+                <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-liceo-blue">
+                    <p class="text-blue-800 font-semibold italic">"Trabajamos día a día para derribar las barreras del aprendizaje y la participación."</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Apoyo" class="rounded-lg shadow-md w-full h-48 object-cover" />
+                <img src="https://images.unsplash.com/photo-1524508021469-8d6bd1db351a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Inclusión" class="rounded-lg shadow-md w-full h-48 object-cover mt-8" />
+            </div>
+        </div>
+
+        <div>
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Nuestro Equipo Multidisciplinario</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="bg-liceo-yellow w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-liceo-blue text-2xl">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800 mb-2">Educadores Diferenciales</h3>
+                    <p class="text-sm text-gray-600">Apoyo pedagógico especializado dentro y fuera del aula regular.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="bg-liceo-blue w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800 mb-2">Psicología</h3>
+                    <p class="text-sm text-gray-600">Evaluación y apoyo socioemocional para fortalecer el desarrollo integral.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="bg-liceo-red w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800 mb-2">Fonoaudiología</h3>
+                    <p class="text-sm text-gray-600">Terapias enfocadas en mejorar el lenguaje y la comunicación.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="bg-liceo-green w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800 mb-2">Trabajo Social</h3>
+                    <p class="text-sm text-gray-600">Nexo fundamental entre el liceo, las redes de apoyo y las familias.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</Layout>

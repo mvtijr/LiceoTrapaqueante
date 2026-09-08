@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout 
+    title="Liceo Trapaqueante - Calendario Escolar"
+    description="Revisa las fechas importantes, reuniones y eventos del Liceo Bicentenario Trapaqueante."
+>
+    <div class="bg-gray-100 py-12 border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h1 class="text-4xl font-bold text-liceo-blue mb-4">Calendario Escolar</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Mantente informado sobre las fechas de evaluaciones, reuniones de apoderados y eventos institucionales.</p>
+        </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 py-16">
+        <div class="bg-white p-4 md:p-8 rounded-xl shadow-md border-t-4 border-liceo-blue overflow-hidden">
+            
+            <!-- Google Calendar Embed Responsive Container -->
+            <div class="relative w-full overflow-hidden" style="padding-top: 75%;">
+                <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%23ffffff&ctz=America%2FSantiago&showTitle=0&showPrint=0&showTabs=1&showCalendars=0&showTz=0&mode=MONTH" style="border-width:0; position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" scrolling="no"></iframe>
+            </div>
+            
+            <div class="mt-6 text-center text-sm text-gray-500">
+                <p>💡 Tip: Puedes sincronizar este calendario con tu teléfono haciendo clic en el botón "+ Google Calendario" en la esquina inferior derecha.</p>
+            </div>
+        </div>
+    </div>
+</Layout>
