@@ -101,13 +101,9 @@ import Layout from '../layouts/Layout.astro';
                                 const pubDate = new Date(item.pubDate);
                                 const dateString = pubDate.toLocaleDateString('es-CL', { day: '2-digit', month: 'short' });
                                 
-                                // Extraer imagen del content si existe, si no usar stock
-                                let imageUrl = stockImages[index % stockImages.length];
-                                const imgRegex = /<img[^>]+src="([^">]+)"/;
-                                const match = item.content.match(imgRegex);
-                                if (match && match[1]) {
-                                    imageUrl = match[1];
-                                }
+                                // Usar thumbnail proporcionado por la API si existe, sino imagen de stock
+                                let imageUrl = item.thumbnail || stockImages[index % stockImages.length];
+                                const fallbackImage = stockImages[index % stockImages.length];
 
                                 const card = document.createElement('a');
                                 card.href = item.link;
@@ -116,7 +112,7 @@ import Layout from '../layouts/Layout.astro';
                                 card.className = "bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition duration-300 block group overflow-hidden flex flex-col";
                                 card.innerHTML = `
                                     <div class="h-48 overflow-hidden relative">
-                                        <img src="${imageUrl}" alt="Noticia MINEDUC" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                        <img src="${imageUrl}" onerror="this.onerror=null; this.src='${fallbackImage}';" alt="Noticia MINEDUC" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                                         <div class="absolute top-4 left-4 bg-liceo-yellow text-liceo-blue text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
                                             ${dateString}
                                         </div>

@@ -87,13 +87,9 @@ import Layout from '../layouts/Layout.astro';
                             let descriptionText = tempDiv.textContent || tempDiv.innerText || '';
                             descriptionText = descriptionText.length > 120 ? descriptionText.substring(0, 120) + '...' : descriptionText;
                             
-                            // Extraer imagen del content si existe
-                            let imageUrl = stockImages[index % stockImages.length];
-                            const imgRegex = /<img[^>]+src="([^">]+)"/;
-                            const match = item.content.match(imgRegex);
-                            if (match && match[1]) {
-                                imageUrl = match[1];
-                            }
+                            // Usar thumbnail proporcionado por la API si existe, sino imagen de stock
+                            let imageUrl = item.thumbnail || stockImages[index % stockImages.length];
+                            const fallbackImage = stockImages[index % stockImages.length];
 
                             // Formatear fecha
                             const pubDate = new Date(item.pubDate);
@@ -107,7 +103,7 @@ import Layout from '../layouts/Layout.astro';
                             
                             card.innerHTML = `
                                 <div class="h-48 overflow-hidden relative">
-                                    <img src="${imageUrl}" alt="Noticia MINEDUC" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                    <img src="${imageUrl}" onerror="this.onerror=null; this.src='${fallbackImage}';" alt="Noticia MINEDUC" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                                 </div>
                                 <div class="p-6 flex-grow flex flex-col">
                                     <div class="flex items-center gap-2 text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">
