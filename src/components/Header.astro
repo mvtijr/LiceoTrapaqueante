@@ -16,6 +16,7 @@ const currentPath = Astro.url.pathname;
             <div class="hidden md:flex space-x-4 font-semibold text-sm lg:text-base lg:space-x-6 items-center">
                 <a href="/" class={`hover:text-liceo-yellow transition ${currentPath === '/' ? 'text-liceo-yellow' : ''}`}>Inicio</a>
                 <a href="/institucion" class={`hover:text-liceo-yellow transition ${currentPath.includes('/institucion') ? 'text-liceo-yellow' : ''}`}>Institución</a>
+                <a href="/especialidades" class={`hover:text-liceo-yellow transition ${currentPath.includes('/especialidades') ? 'text-liceo-yellow' : ''}`}>Especialidades</a>
                 <a href="/documentos" class={`hover:text-liceo-yellow transition ${currentPath.includes('/documentos') ? 'text-liceo-yellow' : ''}`}>Documentos</a>
                 <a href="/talleres" class={`hover:text-liceo-yellow transition ${currentPath.includes('/talleres') ? 'text-liceo-yellow' : ''}`}>Talleres</a>
                 <a href="/galeria" class={`hover:text-liceo-yellow transition ${currentPath.includes('/galeria') ? 'text-liceo-yellow' : ''}`}>Galería</a>
@@ -36,6 +37,7 @@ const currentPath = Astro.url.pathname;
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <a href="/" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow">Inicio</a>
             <a href="/institucion" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow">Institución</a>
+            <a href="/especialidades" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow">Especialidades</a>
             <a href="/documentos" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow">Documentos</a>
             <a href="/talleres" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow">Talleres</a>
             <a href="/galeria" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow">Galería</a>
