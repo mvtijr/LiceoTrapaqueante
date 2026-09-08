@@ -18,12 +18,14 @@ const currentPath = Astro.url.pathname;
                 
                 <!-- Dropdown Institución -->
                 <div class="relative group">
-                    <button class={`hover:text-liceo-yellow transition flex items-center gap-1 ${(currentPath.includes('/institucion') || currentPath.includes('/pie')) ? 'text-liceo-yellow' : ''}`}>
+                    <button class={`hover:text-liceo-yellow transition flex items-center gap-1 h-full py-2 ${(currentPath.includes('/institucion') || currentPath.includes('/pie')) ? 'text-liceo-yellow' : ''}`}>
                         Nosotros <i class="fas fa-chevron-down text-xs ml-1"></i>
                     </button>
-                    <div class="absolute left-0 mt-2 w-48 bg-white text-gray-800 rounded-md shadow-xl py-2 hidden group-hover:block border-t-4 border-liceo-blue">
-                        <a href="/institucion" class="block px-4 py-2 hover:bg-gray-100 hover:text-liceo-blue transition">Institución</a>
-                        <a href="/pie" class="block px-4 py-2 hover:bg-gray-100 hover:text-liceo-blue transition">Equipo PIE</a>
+                    <div class="absolute left-0 top-full pt-2 w-48 hidden group-hover:block z-50">
+                        <div class="bg-white text-gray-800 rounded-md shadow-xl py-2 border-t-4 border-liceo-blue">
+                            <a href="/institucion" class="block px-4 py-2 hover:bg-gray-100 hover:text-liceo-blue transition">Institución</a>
+                            <a href="/pie" class="block px-4 py-2 hover:bg-gray-100 hover:text-liceo-blue transition">Equipo PIE</a>
+                        </div>
                     </div>
                 </div>
 
@@ -31,14 +33,16 @@ const currentPath = Astro.url.pathname;
                 
                 <!-- Dropdown Comunidad -->
                 <div class="relative group">
-                    <button class={`hover:text-liceo-yellow transition flex items-center gap-1 ${(currentPath.includes('/noticias') || currentPath.includes('/galeria') || currentPath.includes('/calendario') || currentPath.includes('/documentos')) ? 'text-liceo-yellow' : ''}`}>
+                    <button class={`hover:text-liceo-yellow transition flex items-center gap-1 h-full py-2 ${(currentPath.includes('/noticias') || currentPath.includes('/galeria') || currentPath.includes('/calendario') || currentPath.includes('/documentos')) ? 'text-liceo-yellow' : ''}`}>
                         Comunidad <i class="fas fa-chevron-down text-xs ml-1"></i>
                     </button>
-                    <div class="absolute left-0 mt-2 w-48 bg-white text-gray-800 rounded-md shadow-xl py-2 hidden group-hover:block border-t-4 border-liceo-blue">
-                        <a href="/noticias" class="block px-4 py-2 hover:bg-gray-100 hover:text-liceo-blue transition">Noticias</a>
-                        <a href="/galeria" class="block px-4 py-2 hover:bg-gray-100 hover:text-liceo-blue transition">Galería</a>
-                        <a href="/calendario" class="block px-4 py-2 hover:bg-gray-100 hover:text-liceo-blue transition">Calendario Escolar</a>
-                        <a href="/documentos" class="block px-4 py-2 hover:bg-gray-100 hover:text-liceo-blue transition">Documentos</a>
+                    <div class="absolute left-0 top-full pt-2 w-48 hidden group-hover:block z-50">
+                        <div class="bg-white text-gray-800 rounded-md shadow-xl py-2 border-t-4 border-liceo-blue">
+                            <a href="/noticias" class="block px-4 py-2 hover:bg-gray-100 hover:text-liceo-blue transition">Noticias</a>
+                            <a href="/galeria" class="block px-4 py-2 hover:bg-gray-100 hover:text-liceo-blue transition">Galería</a>
+                            <a href="/calendario" class="block px-4 py-2 hover:bg-gray-100 hover:text-liceo-blue transition">Calendario Escolar</a>
+                            <a href="/documentos" class="block px-4 py-2 hover:bg-gray-100 hover:text-liceo-blue transition">Documentos</a>
+                        </div>
                     </div>
                 </div>
 
