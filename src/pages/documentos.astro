@@ -1,9 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import docData from '../data/documentos.json';
+
+const documentos = docData?.docs || [];
 ---
 <Layout 
     title="Liceo Trapaqueante - Documentos Oficiales"
-    description="Descarga los documentos oficiales, reglamentos y protocolos del Liceo Trapaqueante de Tirúa."
+    description="Descarga los documentos oficiales del Liceo Trapaqueante de Tirua."
 >
     <div class="bg-gray-100 py-12 border-b border-gray-200">
         <div class="max-w-6xl mx-auto px-4 text-center">
@@ -12,83 +15,34 @@ import Layout from '../layouts/Layout.astro';
         </div>
     </div>
 
-    <div class="max-w-6xl mx-auto px-4 py-16">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            
-            <!-- Documentos Institucionales -->
-            <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-liceo-blue">
-                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
-                    <i class="fas fa-file-signature text-liceo-blue"></i> Normativa Institucional
-                </h2>
-                <div class="space-y-4">
-                    <a href="#" class="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition border border-gray-200 group">
-                        <div class="flex items-center gap-3">
-                            <i class="fas fa-file-pdf text-red-500 text-2xl"></i>
-                            <div>
-                                <h4 class="font-bold text-gray-800 group-hover:text-liceo-blue transition">Proyecto Educativo Institucional (PEI)</h4>
-                                <p class="text-xs text-gray-500">Actualizado 2026</p>
+    <div class="max-w-4xl mx-auto px-4 py-16">
+        <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-liceo-blue">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+                <i class="fas fa-file-signature text-liceo-blue"></i> Archivos Disponibles
+            </h2>
+            <div class="space-y-4">
+                {documentos.length === 0 ? (
+                    <p class="text-gray-500 text-center py-8">Aún no hay documentos disponibles para descargar.</p>
+                ) : (
+                    documentos.map((doc) => (
+                        <a href={doc.file} target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition border border-gray-200 group">
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-file-pdf text-red-500 text-3xl"></i>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 group-hover:text-liceo-blue transition">{doc.title}</h4>
+                                    {doc.desc && <p class="text-sm text-gray-500">{doc.desc}</p>}
+                                </div>
                             </div>
-                        </div>
-                        <i class="fas fa-download text-gray-400 group-hover:text-liceo-blue"></i>
-                    </a>
-
-                    <a href="#" class="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition border border-gray-200 group">
-                        <div class="flex items-center gap-3">
-                            <i class="fas fa-file-pdf text-red-500 text-2xl"></i>
-                            <div>
-                                <h4 class="font-bold text-gray-800 group-hover:text-liceo-blue transition">Reglamento Interno y Convivencia</h4>
-                                <p class="text-xs text-gray-500">Manual RICE 2026</p>
-                            </div>
-                        </div>
-                        <i class="fas fa-download text-gray-400 group-hover:text-liceo-blue"></i>
-                    </a>
-                    
-                    <a href="#" class="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition border border-gray-200 group">
-                        <div class="flex items-center gap-3">
-                            <i class="fas fa-file-pdf text-red-500 text-2xl"></i>
-                            <div>
-                                <h4 class="font-bold text-gray-800 group-hover:text-liceo-blue transition">Reglamento de Evaluación</h4>
-                                <p class="text-xs text-gray-500">Decreto 67</p>
-                            </div>
-                        </div>
-                        <i class="fas fa-download text-gray-400 group-hover:text-liceo-blue"></i>
-                    </a>
-                </div>
+                            <i class="fas fa-download text-gray-400 group-hover:text-liceo-blue text-xl"></i>
+                        </a>
+                    ))
+                )}
             </div>
+        </div>
 
-            <!-- Protocolos -->
-            <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-liceo-red">
-                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
-                    <i class="fas fa-shield-alt text-liceo-red"></i> Protocolos de Acción
-                </h2>
-                <div class="space-y-4">
-                    <a href="#" class="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition border border-gray-200 group">
-                        <div class="flex items-center gap-3">
-                            <i class="fas fa-file-pdf text-red-500 text-2xl"></i>
-                            <div>
-                                <h4 class="font-bold text-gray-800 group-hover:text-liceo-red transition">Protocolo de Accidentes Escolares</h4>
-                            </div>
-                        </div>
-                        <i class="fas fa-download text-gray-400 group-hover:text-liceo-red"></i>
-                    </a>
-
-                    <a href="#" class="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition border border-gray-200 group">
-                        <div class="flex items-center gap-3">
-                            <i class="fas fa-file-pdf text-red-500 text-2xl"></i>
-                            <div>
-                                <h4 class="font-bold text-gray-800 group-hover:text-liceo-red transition">Protocolo Bullying y Ciberacoso</h4>
-                            </div>
-                        </div>
-                        <i class="fas fa-download text-gray-400 group-hover:text-liceo-red"></i>
-                    </a>
-                </div>
-                
-                <div class="mt-8 p-4 bg-yellow-50 rounded-lg border border-yellow-200 text-sm text-yellow-800 flex items-start gap-3">
-                    <i class="fas fa-info-circle mt-1"></i>
-                    <p>Estos documentos son de carácter público. Si necesitas un documento que no se encuentra aquí, por favor solicítalo en secretaría o a través de nuestra página de <a href="/contacto" class="font-bold underline hover:text-yellow-600">contacto</a>.</p>
-                </div>
-            </div>
-
+        <div class="mt-8 p-4 bg-yellow-50 rounded-lg border border-yellow-200 text-sm text-yellow-800 flex items-start gap-3">
+            <i class="fas fa-info-circle mt-1"></i>
+            <p>Estos documentos son de carácter público. Si necesitas un documento que no se encuentra aquí, por favor solicítalo en secretaría o a través de nuestra página de <a href="/contacto" class="font-bold underline hover:text-yellow-600">contacto</a>.</p>
         </div>
     </div>
 </Layout>

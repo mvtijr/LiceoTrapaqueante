@@ -32,3 +32,16 @@ collections:
         name: "galeria_ch"
         fields:
           - { label: "Fotos", name: "fotos", widget: "list", field: { label: "Foto", name: "image", widget: "image" } }
+  
+  - name: "documentos"
+    label: "Documentos Institucionales"
+    files:
+      - file: "src/data/documentos.json"
+        label: "Documentos para Descargar (PEI, RICE, etc.)"
+        name: "documentos_oficiales"
+        fields:
+          - { label: "Lista de Documentos", name: "docs", widget: "list", fields: [
+              { label: "Nombre del Documento", name: "title", widget: "string" },
+              { label: "Descripción Corta", name: "desc", widget: "string", required: false },
+              { label: "Archivo PDF", name: "file", widget: "file" }
+            ] }
