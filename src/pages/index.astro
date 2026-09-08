@@ -54,6 +54,65 @@ import Layout from '../layouts/Layout.astro';
         </div>
     </div>
 
+    <!-- Sección MINEDUC Feed -->
+    <div class="bg-gray-50 py-16 border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 border-l-4 border-liceo-blue pl-4">Noticias MINEDUC</h2>
+                <a href="/noticias" class="text-liceo-blue font-bold hover:underline hidden md:block">Ver todas las oficiales →</a>
+            </div>
+            
+            <div id="mineduc-news-container-home" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Skeletons Loading -->
+                <div class="animate-pulse bg-white p-6 rounded-lg shadow-sm border border-gray-100 h-48"></div>
+                <div class="animate-pulse bg-white p-6 rounded-lg shadow-sm border border-gray-100 h-48 hidden md:block"></div>
+                <div class="animate-pulse bg-white p-6 rounded-lg shadow-sm border border-gray-100 h-48 hidden md:block"></div>
+            </div>
+            
+            <div class="mt-6 text-center md:hidden">
+                <a href="/noticias" class="text-liceo-blue font-bold hover:underline">Ver todas las oficiales →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script para Mineduc Home -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const rssUrl = 'https://www.mineduc.cl/feed/';
+            const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+            const container = document.getElementById('mineduc-news-container-home');
+
+            if (container) {
+                fetch(apiUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === 'ok') {
+                            container.innerHTML = ''; 
+                            const items = data.items.slice(0, 3);
+                            items.forEach(item => {
+                                const pubDate = new Date(item.pubDate);
+                                const dateString = pubDate.toLocaleDateString('es-CL', { day: '2-digit', month: 'short' });
+                                const card = document.createElement('a');
+                                card.href = item.link;
+                                card.target = "_blank";
+                                card.rel = "noopener noreferrer";
+                                card.className = "bg-white p-6 rounded-lg shadow-md border-t-4 border-liceo-yellow hover:shadow-xl hover:-translate-y-1 transition duration-300 block group";
+                                card.innerHTML = `
+                                    <span class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 block">${dateString}</span>
+                                    <h3 class="font-bold text-gray-800 mb-2 group-hover:text-liceo-blue transition line-clamp-3">${item.title}</h3>
+                                    <span class="text-liceo-blue font-semibold text-xs group-hover:underline mt-auto inline-block">Leer más →</span>
+                                `;
+                                container.appendChild(card);
+                            });
+                        } else {
+                            container.innerHTML = '<p class="text-red-500">No se pudieron cargar las noticias del ministerio.</p>';
+                        }
+                    })
+                    .catch(error => console.error('Error fetching MINEDUC:', error));
+            }
+        });
+    </script>
+
     <!-- Sección Instagram Feed -->
     <div class="bg-gray-100 py-16">
         <div class="max-w-6xl mx-auto px-4">

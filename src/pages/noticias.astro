@@ -1,0 +1,112 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout 
+    title="Liceo Trapaqueante - Noticias MINEDUC"
+    description="Últimas noticias del Ministerio de Educación de Chile."
+>
+    <!-- Header Noticias -->
+    <div class="bg-gray-800 py-16 border-b-4 border-liceo-blue text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Noticias" class="w-full h-full object-cover">
+        </div>
+        <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
+            <div class="bg-white text-gray-800 w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-md mx-auto mb-4 border-2 border-liceo-blue">
+                <i class="fas fa-newspaper"></i>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Noticias Oficiales</h1>
+            <p class="text-lg max-w-2xl mx-auto text-gray-200">Mantente informado con los comunicados oficiales del Ministerio de Educación.</p>
+        </div>
+    </div>
+
+    <!-- Feed MINEDUC (Client Side Rendered) -->
+    <div class="max-w-6xl mx-auto px-4 py-16">
+        <div class="flex justify-between items-center mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 border-l-4 border-liceo-blue pl-4">Últimas Publicaciones del MINEDUC</h2>
+            <a href="https://www.mineduc.cl/category/noticias/" target="_blank" rel="noopener noreferrer" class="text-liceo-blue font-bold hover:underline text-sm hidden md:inline-block">Ir a Mineduc.cl →</a>
+        </div>
+
+        <div id="mineduc-news-container-page" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Skeletons Loading -->
+            <div class="animate-pulse bg-white p-6 rounded-lg shadow-md h-64 border border-gray-100">
+                <div class="h-4 bg-gray-200 rounded w-1/4 mb-4"></div>
+                <div class="h-6 bg-gray-200 rounded w-full mb-4"></div>
+                <div class="h-6 bg-gray-200 rounded w-3/4 mb-4"></div>
+                <div class="h-20 bg-gray-200 rounded w-full"></div>
+            </div>
+            <div class="animate-pulse bg-white p-6 rounded-lg shadow-md h-64 border border-gray-100">
+                <div class="h-4 bg-gray-200 rounded w-1/4 mb-4"></div>
+                <div class="h-6 bg-gray-200 rounded w-full mb-4"></div>
+                <div class="h-6 bg-gray-200 rounded w-3/4 mb-4"></div>
+                <div class="h-20 bg-gray-200 rounded w-full"></div>
+            </div>
+            <div class="animate-pulse bg-white p-6 rounded-lg shadow-md h-64 border border-gray-100">
+                <div class="h-4 bg-gray-200 rounded w-1/4 mb-4"></div>
+                <div class="h-6 bg-gray-200 rounded w-full mb-4"></div>
+                <div class="h-6 bg-gray-200 rounded w-3/4 mb-4"></div>
+                <div class="h-20 bg-gray-200 rounded w-full"></div>
+            </div>
+        </div>
+        
+        <div class="mt-8 text-center md:hidden">
+            <a href="https://www.mineduc.cl/category/noticias/" target="_blank" rel="noopener noreferrer" class="bg-gray-100 text-gray-700 font-bold py-2 px-6 rounded-full hover:bg-gray-200 transition">Ver más en Mineduc.cl</a>
+        </div>
+    </div>
+
+    <!-- Script para cargar el RSS de Mineduc -->
+    <script>
+        const rssUrl = 'https://www.mineduc.cl/feed/';
+        const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+        
+        const container = document.getElementById('mineduc-news-container-page');
+
+        if (container) {
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'ok') {
+                        container.innerHTML = ''; // Limpiar skeletons
+                        
+                        // Mostrar las primeras 9 noticias en la página dedicada
+                        const items = data.items.slice(0, 9);
+                        
+                        items.forEach(item => {
+                            // Limpiar tags HTML de la descripción
+                            const tempDiv = document.createElement('div');
+                            tempDiv.innerHTML = item.description;
+                            let descriptionText = tempDiv.textContent || tempDiv.innerText || '';
+                            descriptionText = descriptionText.length > 120 ? descriptionText.substring(0, 120) + '...' : descriptionText;
+                            
+                            // Formatear fecha
+                            const pubDate = new Date(item.pubDate);
+                            const dateString = pubDate.toLocaleDateString('es-CL', { day: '2-digit', month: 'short', year: 'numeric' });
+
+                            const card = document.createElement('a');
+                            card.href = item.link;
+                            card.target = "_blank";
+                            card.rel = "noopener noreferrer";
+                            card.className = "bg-white p-6 rounded-lg shadow-md border-t-4 border-liceo-blue hover:shadow-xl hover:-translate-y-1 transition duration-300 block group";
+                            
+                            card.innerHTML = `
+                                <div class="flex items-center gap-2 text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">
+                                    <i class="fas fa-calendar-alt text-liceo-yellow"></i>
+                                    <span>${dateString}</span>
+                                </div>
+                                <h3 class="font-bold text-lg text-gray-800 mb-3 group-hover:text-liceo-blue transition">${item.title}</h3>
+                                <p class="text-sm text-gray-600 mb-4 line-clamp-3">${descriptionText}</p>
+                                <span class="text-liceo-blue font-semibold text-sm group-hover:underline">Leer comunicado oficial →</span>
+                            `;
+                            
+                            container.appendChild(card);
+                        });
+                    } else {
+                        container.innerHTML = '<p class="text-red-500 col-span-3">No se pudieron cargar las noticias del ministerio en este momento.</p>';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching MINEDUC news:', error);
+                    container.innerHTML = '<p class="text-gray-500 col-span-3">Ocurrió un error al cargar las noticias.</p>';
+                });
+        }
+    </script>
+</Layout>
