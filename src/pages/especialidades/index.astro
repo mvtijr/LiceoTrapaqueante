@@ -1,0 +1,85 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout 
+    title="Liceo Trapaqueante - Especialidades"
+    description="Conoce nuestra oferta educativa: Técnico en Enfermería, Técnico en Acuicultura y formación Científico Humanista."
+>
+    <!-- Header de la página -->
+    <div class="bg-liceo-blue py-16 border-b-4 border-liceo-yellow text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Educación" class="w-full h-full object-cover">
+        </div>
+        <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Oferta Educativa</h1>
+            <p class="text-lg text-blue-200 max-w-2xl mx-auto">Preparamos a nuestros estudiantes para la educación superior y el mundo laboral con carreras técnicas de excelencia y formación científico-humanista.</p>
+        </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 py-16">
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Tarjeta Enfermería -->
+            <a href="/especialidades/enfermeria" class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden flex flex-col border-t-4 border-liceo-red transform hover:-translate-y-2">
+                <div class="h-56 overflow-hidden relative">
+                    <img src="/enfermeria.jpg" alt="Enfermería" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                        <h2 class="text-2xl font-bold text-white">Técnico en Enfermería</h2>
+                    </div>
+                </div>
+                <div class="p-6 flex-grow flex flex-col justify-between">
+                    <p class="text-gray-600 mb-4 line-clamp-3">Preparación integral para desempeñarse en el área de la salud con profunda vocación de servicio.</p>
+                    <div class="flex items-center text-liceo-red font-bold">
+                        <span>Ver galería y detalles</span>
+                        <i class="fas fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Tarjeta Acuicultura -->
+            <a href="/especialidades/acuicultura" class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden flex flex-col border-t-4 border-liceo-blue transform hover:-translate-y-2">
+                <div class="h-56 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1534043464124-3be32fe000c9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="Acuicultura" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                        <h2 class="text-2xl font-bold text-white">Técnico en Acuicultura</h2>
+                    </div>
+                </div>
+                <div class="p-6 flex-grow flex flex-col justify-between">
+                    <p class="text-gray-600 mb-4 line-clamp-3">Innovación y desarrollo sustentable de los recursos marinos de nuestra zona costera.</p>
+                    <div class="flex items-center text-liceo-blue font-bold">
+                        <span>Ver galería y detalles</span>
+                        <i class="fas fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Tarjeta Científico Humanista -->
+            <a href="/especialidades/cientifico-humanista" class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden flex flex-col border-t-4 border-liceo-yellow transform hover:-translate-y-2">
+                <div class="h-56 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="Científico Humanista" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                        <h2 class="text-2xl font-bold text-white">Científico Humanista</h2>
+                    </div>
+                </div>
+                <div class="p-6 flex-grow flex flex-col justify-between">
+                    <p class="text-gray-600 mb-4 line-clamp-3">Sólida preparación académica orientada al ingreso a la educación superior y universidades.</p>
+                    <div class="flex items-center text-yellow-600 font-bold">
+                        <span>Ver galería y detalles</span>
+                        <i class="fas fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="bg-gray-100 py-16 text-center">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">¿Te interesa matricularte?</h2>
+        <p class="text-gray-600 mb-8 max-w-2xl mx-auto">Revisa nuestro proceso de admisión y asegura tu cupo en la especialidad que definirá tu futuro.</p>
+        <a href="/admision" class="bg-liceo-blue text-white font-bold py-3 px-8 rounded-full hover:bg-blue-800 transition shadow-md">
+            Ver Proceso de Admisión
+        </a>
+    </div>
+
+</Layout>

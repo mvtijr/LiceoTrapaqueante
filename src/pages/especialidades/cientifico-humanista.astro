@@ -1,0 +1,91 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout 
+    title="Liceo Trapaqueante - Científico Humanista"
+    description="Formación Científico Humanista del Liceo Trapaqueante."
+>
+    <!-- Header Especialidad -->
+    <div class="bg-liceo-yellow py-16 border-b-4 border-liceo-blue text-liceo-blue relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Fondo CH" class="w-full h-full object-cover">
+        </div>
+        <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
+            <div class="bg-white text-liceo-yellow w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-md mx-auto mb-4 border-2 border-liceo-blue">
+                <i class="fas fa-microscope text-liceo-blue"></i>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Científico Humanista</h1>
+            <p class="text-lg max-w-2xl mx-auto font-semibold">Preparación integral para la educación superior.</p>
+        </div>
+    </div>
+
+    <!-- Contenido -->
+    <div class="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-3 gap-10">
+        
+        <div class="md:col-span-2 space-y-6">
+            <h2 class="text-3xl font-bold text-gray-800 border-b-2 border-liceo-yellow pb-2 inline-block">Sobre la Modalidad</h2>
+            <p class="text-gray-600 leading-relaxed text-lg">
+                Para los estudiantes que proyectan continuar estudios en universidades, institutos profesionales o fuerzas armadas, ofrecemos la modalidad Científico-Humanista. Nuestro plan de estudios entrega una sólida base en ciencias, lenguaje, historia y matemáticas, preparando a los jóvenes para rendir con éxito la Prueba de Acceso a la Educación Superior (PAES).
+            </p>
+            
+            <h3 class="text-2xl font-bold text-gray-800 mt-10 mb-4"><i class="fas fa-university text-liceo-yellow mr-2"></i> Nuestro Enfoque</h3>
+            <ul class="list-disc list-inside text-gray-600 text-lg space-y-2 bg-gray-50 p-6 rounded-lg border border-gray-200">
+                <li>Preparación intensiva y talleres enfocados en la PAES</li>
+                <li>Desarrollo de pensamiento crítico, debate e investigación</li>
+                <li>Orientación vocacional continua para la educación superior</li>
+                <li>Planes electivos en áreas de Ciencias, Humanidades y Matemáticas</li>
+            </ul>
+        </div>
+
+        <!-- Sidebar CTA -->
+        <div class="bg-gray-100 p-8 rounded-xl text-center border-t-4 border-liceo-blue self-start">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Construye tu futuro</h3>
+            <p class="text-gray-600 mb-6">Asegura tu cupo en nuestro proceso de admisión 2027.</p>
+            <a href="/admision" class="bg-liceo-blue text-white font-bold py-3 px-6 rounded-full hover:bg-blue-800 transition block shadow-md">
+                Postular Ahora
+            </a>
+            <a href="/especialidades" class="text-sm text-gray-500 mt-4 block hover:underline">← Volver a Especialidades</a>
+        </div>
+    </div>
+
+    <!-- Galería de Fotos -->
+    <div class="bg-white py-16 border-t border-gray-200">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center mb-8">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-800">Galería C.H.</h2>
+                    <p class="text-gray-500 mt-1">Alumnos en actividades académicas y talleres.</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- Foto Placeholder 1 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-md bg-gray-200 flex items-center justify-center min-h-[250px] md:col-span-2 md:row-span-2">
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="Clases" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
+                    <div class="relative z-10 text-center text-white bg-black bg-opacity-50 w-full p-2">
+                        <span class="text-sm font-bold">Foto de Referencia</span>
+                    </div>
+                </div>
+                
+                <!-- Espacios vacíos -->
+                <div class="group relative overflow-hidden rounded-lg shadow-md bg-gray-100 flex flex-col items-center justify-center min-h-[200px] border-2 border-dashed border-gray-300">
+                    <i class="fas fa-plus text-3xl text-gray-400 mb-2"></i>
+                    <span class="text-sm text-gray-500">Agregar Foto</span>
+                </div>
+                <div class="group relative overflow-hidden rounded-lg shadow-md bg-gray-100 flex flex-col items-center justify-center min-h-[200px] border-2 border-dashed border-gray-300">
+                    <i class="fas fa-plus text-3xl text-gray-400 mb-2"></i>
+                    <span class="text-sm text-gray-500">Agregar Foto</span>
+                </div>
+                <div class="group relative overflow-hidden rounded-lg shadow-md bg-gray-100 flex flex-col items-center justify-center min-h-[200px] border-2 border-dashed border-gray-300">
+                    <i class="fas fa-plus text-3xl text-gray-400 mb-2"></i>
+                    <span class="text-sm text-gray-500">Agregar Foto</span>
+                </div>
+                <div class="group relative overflow-hidden rounded-lg shadow-md bg-gray-100 flex flex-col items-center justify-center min-h-[200px] border-2 border-dashed border-gray-300">
+                    <i class="fas fa-plus text-3xl text-gray-400 mb-2"></i>
+                    <span class="text-sm text-gray-500">Agregar Foto</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</Layout>
