@@ -42,12 +42,25 @@ const currentPath = Astro.url.pathname;
                             <a href="/noticias" class="block px-4 py-2 hover:bg-gray-100 hover:text-liceo-blue transition">Noticias</a>
                             <a href="/galeria" class="block px-4 py-2 hover:bg-gray-100 hover:text-liceo-blue transition">Galería</a>
                             <a href="/calendario" class="block px-4 py-2 hover:bg-gray-100 hover:text-liceo-blue transition">Calendario Escolar</a>
+                            <a href="/representantes" class="block px-4 py-2 hover:bg-gray-100 hover:text-liceo-blue transition">CEAL y CGPA</a>
                             <a href="/documentos" class="block px-4 py-2 hover:bg-gray-100 hover:text-liceo-blue transition">Transparencia y Documentos</a>
                         </div>
                     </div>
                 </div>
 
-                <a href="/admision" class={`hover:text-liceo-yellow transition ${currentPath.includes('/admision') ? 'text-liceo-yellow' : ''}`}>Admisión</a>
+                <!-- Dropdown Admisión -->
+                <div class="relative group">
+                    <button class={`hover:text-liceo-yellow transition flex items-center gap-1 h-full py-2 ${(currentPath.includes('/admision') || currentPath.includes('/beneficios')) ? 'text-liceo-yellow' : ''}`}>
+                        Admisión <i class="fas fa-chevron-down text-xs ml-1"></i>
+                    </button>
+                    <div class="absolute left-0 top-full pt-2 w-48 hidden group-hover:block z-50">
+                        <div class="bg-white text-gray-800 rounded-md shadow-xl py-2 border-t-4 border-liceo-blue">
+                            <a href="/admision" class="block px-4 py-2 hover:bg-gray-100 hover:text-liceo-blue transition">Proceso de Admisión</a>
+                            <a href="/beneficios" class="block px-4 py-2 hover:bg-gray-100 hover:text-liceo-blue transition">Beneficios JUNAEB</a>
+                        </div>
+                    </div>
+                </div>
+
                 <a href="/contacto" class={`hover:text-liceo-yellow transition ${currentPath.includes('/contacto') ? 'text-liceo-yellow' : ''}`}>Contacto</a>
                 
                 <!-- Botón Webclass Desktop -->
@@ -84,10 +97,14 @@ const currentPath = Astro.url.pathname;
             <a href="/noticias" class="block pl-6 pr-3 py-2 text-sm font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800/50">Noticias</a>
             <a href="/galeria" class="block pl-6 pr-3 py-2 text-sm font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800/50">Galería</a>
             <a href="/calendario" class="block pl-6 pr-3 py-2 text-sm font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800/50">Calendario</a>
+            <a href="/representantes" class="block pl-6 pr-3 py-2 text-sm font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800/50">CEAL y CGPA</a>
             <a href="/documentos" class="block pl-6 pr-3 py-2 text-sm font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800">Transparencia y Documentos</a>
             
-            <a href="/admision" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800 mt-2">Admisión</a>
-            <a href="/contacto" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow">Contacto</a>
+            <div class="px-3 py-2 text-base font-bold text-blue-200 mt-2">Admisión</div>
+            <a href="/admision" class="block pl-6 pr-3 py-2 text-sm font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800/50">Proceso de Admisión</a>
+            <a href="/beneficios" class="block pl-6 pr-3 py-2 text-sm font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800">Beneficios JUNAEB</a>
+            
+            <a href="/contacto" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow mt-2">Contacto</a>
             
             <div class="mt-4 px-3 pb-3">
                 <a href="https://plataforma.webescuela.cl/sistema/webclass/" target="_blank" rel="noopener noreferrer" class="block w-full bg-liceo-yellow text-liceo-blue px-4 py-3 rounded-lg font-bold text-center">

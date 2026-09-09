@@ -1,0 +1,85 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout 
+    title="Liceo Trapaqueante - Beneficios Estudiantiles (JUNAEB)"
+    description="Conoce los beneficios estatales, alimentación escolar (PAE), TNE y becas disponibles para los estudiantes del Liceo Trapaqueante."
+>
+    <!-- Header -->
+    <div class="bg-liceo-blue py-16 border-b-4 border-liceo-yellow text-white relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Beneficios Estudiantiles</h1>
+            <p class="text-lg max-w-2xl mx-auto text-blue-200">Apoyo integral estatal y de JUNAEB para acompañar a nuestros estudiantes durante toda su trayectoria educativa.</p>
+        </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 py-16 space-y-16">
+        
+        <!-- Alimentación -->
+        <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col md:flex-row">
+            <div class="md:w-1/3 bg-green-50 flex items-center justify-center p-8 border-r border-gray-100">
+                <i class="fas fa-apple-alt text-7xl text-green-500"></i>
+            </div>
+            <div class="p-8 md:w-2/3">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Programa de Alimentación Escolar (PAE)</h2>
+                <p class="text-gray-600 mb-4">Como establecimiento de educación pública, nuestros estudiantes tienen acceso al servicio de alimentación entregado por JUNAEB. Este programa busca garantizar que todos los alumnos cuenten con la nutrición adecuada para un óptimo rendimiento académico.</p>
+                <ul class="list-disc list-inside text-gray-600 space-y-2">
+                    <li>Desayuno nutritivo al inicio de la jornada.</li>
+                    <li>Almuerzo balanceado para estudiantes con Jornada Escolar Completa (JEC).</li>
+                    <li>Minutas elaboradas por nutricionistas considerando requerimientos calóricos.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TNE -->
+        <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col md:flex-row-reverse">
+            <div class="md:w-1/3 bg-blue-50 flex items-center justify-center p-8 border-l border-gray-100">
+                <i class="fas fa-bus text-7xl text-liceo-blue"></i>
+            </div>
+            <div class="p-8 md:w-2/3">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Tarjeta Nacional Estudiantil (TNE)</h2>
+                <p class="text-gray-600 mb-4">La TNE o "Pase Escolar" es un beneficio que permite a nuestros estudiantes acceder a tarifas rebajadas o gratuitas en el transporte público, fundamental para quienes se desplazan desde sectores rurales o comunas aledañas a Tirúa.</p>
+                <div class="bg-blue-50 p-4 rounded-lg border border-blue-100 inline-block">
+                    <p class="text-sm text-liceo-blue font-bold"><i class="fas fa-info-circle mr-2"></i> Trámite: El liceo apoya en el proceso de captura fotográfica y revalidación anual a través del sistema oficial de JUNAEB.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Becas -->
+        <div>
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-gray-800 inline-block border-b-2 border-liceo-yellow pb-2">Becas y Programas de Apoyo</h2>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Nuestro equipo de asistentes sociales y orientación guía a las familias en la postulación a beneficios estatales de acuerdo a su Registro Social de Hogares (RSH).</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-yellow-500 hover:-translate-y-1 transition duration-300">
+                    <div class="w-14 h-14 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center text-2xl mb-4">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Beca Indígena (BI)</h3>
+                    <p class="text-gray-600 text-sm">Aporte monetario destinado a estudiantes de ascendencia indígena (con certificado CONADI) que presenten buen rendimiento académico y vulnerabilidad socioeconómica. Altamente relevante para nuestra comunidad de Tirúa.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-liceo-red hover:-translate-y-1 transition duration-300">
+                    <div class="w-14 h-14 bg-red-100 text-liceo-red rounded-full flex items-center justify-center text-2xl mb-4">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Beca Presidente de la República</h3>
+                    <p class="text-gray-600 text-sm">Premia el esfuerzo de estudiantes de enseñanza media con excelencia académica (promedio sobre 6.0) y que se encuentren en los tramos más vulnerables del Registro Social de Hogares.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-liceo-green hover:-translate-y-1 transition duration-300">
+                    <div class="w-14 h-14 bg-green-100 text-liceo-green rounded-full flex items-center justify-center text-2xl mb-4">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Programa Útiles Escolares (PUE)</h3>
+                    <p class="text-gray-600 text-sm">Entrega anual de un set de útiles escolares estandarizado, que alivia la carga económica de las familias a inicio del año escolar. Se asigna automáticamente por el nivel de vulnerabilidad.</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</Layout>

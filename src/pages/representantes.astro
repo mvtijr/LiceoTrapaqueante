@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout 
+    title="Liceo Trapaqueante - Centros de Representación"
+    description="Conoce al Centro de Estudiantes (CEAL) y al Centro General de Padres y Apoderados (CGPA) del Liceo Bicentenario Trapaqueante."
+>
+    <!-- Header -->
+    <div class="bg-liceo-blue py-16 border-b-4 border-liceo-yellow text-white relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Centros de Representación</h1>
+            <p class="text-lg max-w-2xl mx-auto text-blue-200">La participación democrática y la organización comunitaria son pilares fundamentales de nuestra identidad.</p>
+        </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 py-16 space-y-16">
+        
+        <!-- CEAL -->
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+            <div class="bg-gradient-to-r from-liceo-yellow to-yellow-500 p-6 text-white text-center">
+                <i class="fas fa-users text-5xl mb-3"></i>
+                <h2 class="text-3xl font-bold">Centro de Estudiantes (CEAL)</h2>
+                <p class="mt-2 text-yellow-50 font-medium">Liderazgo joven y voz activa en el desarrollo de nuestro Liceo</p>
+            </div>
+            <div class="p-8 md:p-12">
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Nuestra Misión Estudiantil</h3>
+                        <p class="text-gray-600 mb-4">El Centro de Estudiantes representa los intereses, inquietudes y propuestas de todo el alumnado. Fomentamos un ambiente de respeto, inclusión y participación a través de actividades deportivas, culturales y sociales.</p>
+                        <p class="text-gray-600">Trabajamos codo a codo con la Dirección y los docentes para que la voz de los jóvenes sea escuchada y valorada en la toma de decisiones del establecimiento.</p>
+                    </div>
+                    <div class="md:w-1/2 bg-gray-50 rounded-xl p-6 border border-gray-200 w-full">
+                        <h4 class="font-bold text-gray-800 border-b pb-2 mb-4"><i class="fas fa-bullhorn text-liceo-yellow mr-2"></i> Objetivos Principales</h4>
+                        <ul class="space-y-3 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> Organizar actividades de aniversario y semanas culturales.</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> Participar en el Consejo Escolar.</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> Promover el cuidado del medioambiente y las instalaciones.</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> Apoyar campañas solidarias de ayuda a la comunidad de Tirúa.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CGPA -->
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+            <div class="bg-gradient-to-r from-liceo-blue to-blue-700 p-6 text-white text-center">
+                <i class="fas fa-hands-helping text-5xl mb-3"></i>
+                <h2 class="text-3xl font-bold">Centro General de Padres y Apoderados</h2>
+                <p class="mt-2 text-blue-100 font-medium">Familia y Liceo unidos por la educación de nuestros hijos</p>
+            </div>
+            <div class="p-8 md:p-12">
+                <div class="flex flex-col md:flex-row-reverse gap-8 items-center">
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Compromiso Familiar</h3>
+                        <p class="text-gray-600 mb-4">El CGPA es una organización vital para el buen funcionamiento del Liceo Bicentenario Trapaqueante. Representamos a todas las familias de nuestra comunidad educativa, canalizando sus necesidades y apoyando incondicionalmente el Proyecto Educativo Institucional (PEI).</p>
+                        <p class="text-gray-600">Creemos firmemente que la alianza entre la familia y la escuela es el factor más importante para asegurar el éxito y bienestar de nuestros jóvenes.</p>
+                    </div>
+                    <div class="md:w-1/2 bg-gray-50 rounded-xl p-6 border border-gray-200 w-full">
+                        <h4 class="font-bold text-gray-800 border-b pb-2 mb-4"><i class="fas fa-hands text-liceo-blue mr-2"></i> Áreas de Acción</h4>
+                        <ul class="space-y-3 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> Financiamiento y apoyo a giras de estudio y licenciaturas.</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> Mejora continua de los espacios recreativos del liceo.</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> Representación oficial de los apoderados ante la Dirección.</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> Organización de charlas y escuelas para padres.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</Layout>
