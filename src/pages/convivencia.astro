@@ -1,0 +1,111 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+    title="Liceo Trapaqueante - Convivencia Escolar"
+    description="Equipo de convivencia escolar, psicología y protocolos de acción del Liceo Trapaqueante."
+>
+    <!-- Header -->
+    <div class="bg-liceo-green py-16 border-b-4 border-liceo-yellow text-white relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Convivencia Escolar</h1>
+            <p class="text-lg max-w-2xl mx-auto text-green-100">Promoviendo un ambiente seguro, de respeto y bienestar socioemocional para toda nuestra comunidad.</p>
+        </div>
+    </div>
+
+    <!-- Contenido -->
+    <div class="max-w-6xl mx-auto px-4 py-16">
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div class="col-span-1 md:col-span-2">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-liceo-green pb-2">Nuestro Enfoque</h2>
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                    La Convivencia Escolar en el Liceo Bicentenario Trapaqueante es el pilar fundamental para el desarrollo integral de nuestros estudiantes. Creemos firmemente que el aprendizaje solo es posible en un clima de respeto mutuo, inclusión y diálogo.
+                </p>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Nuestro equipo multidisciplinario trabaja día a día en la prevención, promoción y mediación de conflictos, asegurando que cada estudiante se sienta seguro y valorado en nuestra institución.
+                </p>
+                
+                <div class="bg-green-50 p-6 rounded-lg border-l-4 border-liceo-green">
+                    <h3 class="font-bold text-gray-800 mb-2">Objetivos principales:</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-gray-600">
+                        <li>Fomentar el buen trato y la sana convivencia.</li>
+                        <li>Prevenir situaciones de acoso escolar (Bullying o Ciberbullying).</li>
+                        <li>Brindar contención y apoyo socioemocional.</li>
+                        <li>Fortalecer el vínculo familia-escuela.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-span-1">
+                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-blue-400 h-full flex flex-col justify-center">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-users text-5xl text-blue-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-gray-800 mb-2">Equipo Psicosocial</h3>
+                    <p class="text-center text-gray-600 text-sm mb-4">Contamos con Psicólogos(as) y Orientadores(as) al servicio de nuestros estudiantes.</p>
+                    <a href="mailto:convivencia@liceotrapaqueante.cl" class="mt-auto block text-center bg-blue-50 text-blue-600 font-bold py-2 px-4 rounded-lg hover:bg-blue-100 transition">
+                        Contactar al Equipo <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Protocolos y Documentos -->
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Protocolos y Reglamentos</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- RICE -->
+            <div class="bg-white p-6 rounded-lg shadow border border-gray-100 hover:shadow-lg transition group">
+                <div class="text-liceo-blue mb-4">
+                    <i class="fas fa-file-pdf text-4xl group-hover:scale-110 transition"></i>
+                </div>
+                <h3 class="font-bold text-gray-800 mb-2">Reglamento Interno (RICE)</h3>
+                <p class="text-sm text-gray-600 mb-4">Reglamento Interno de Convivencia Escolar vigente para el año en curso.</p>
+                <a href="#" class="text-liceo-blue font-semibold text-sm hover:underline"><i class="fas fa-download mr-1"></i> Descargar Documento</a>
+            </div>
+
+            <!-- Protocolo Bullying -->
+            <div class="bg-white p-6 rounded-lg shadow border border-gray-100 hover:shadow-lg transition group">
+                <div class="text-liceo-red mb-4">
+                    <i class="fas fa-shield-alt text-4xl group-hover:scale-110 transition"></i>
+                </div>
+                <h3 class="font-bold text-gray-800 mb-2">Protocolo Maltrato / Bullying</h3>
+                <p class="text-sm text-gray-600 mb-4">Pasos a seguir frente a situaciones de acoso escolar, ciberacoso o maltrato.</p>
+                <a href="#" class="text-liceo-red font-semibold text-sm hover:underline"><i class="fas fa-download mr-1"></i> Descargar Documento</a>
+            </div>
+
+            <!-- Protocolo Accidentes -->
+            <div class="bg-white p-6 rounded-lg shadow border border-gray-100 hover:shadow-lg transition group">
+                <div class="text-liceo-yellow mb-4">
+                    <i class="fas fa-first-aid text-4xl group-hover:scale-110 transition"></i>
+                </div>
+                <h3 class="font-bold text-gray-800 mb-2">Protocolo de Accidentes</h3>
+                <p class="text-sm text-gray-600 mb-4">Qué hacer y a dónde acudir si un estudiante sufre un accidente escolar.</p>
+                <a href="#" class="text-yellow-600 font-semibold text-sm hover:underline"><i class="fas fa-download mr-1"></i> Descargar Documento</a>
+            </div>
+            
+            <!-- Protocolo Abuso -->
+            <div class="bg-white p-6 rounded-lg shadow border border-gray-100 hover:shadow-lg transition group">
+                <div class="text-purple-500 mb-4">
+                    <i class="fas fa-hands text-4xl group-hover:scale-110 transition"></i>
+                </div>
+                <h3 class="font-bold text-gray-800 mb-2">Protocolo VIF y Abuso</h3>
+                <p class="text-sm text-gray-600 mb-4">Normas de actuación frente a sospechas de violencia intrafamiliar o vulneración de derechos.</p>
+                <a href="#" class="text-purple-500 font-semibold text-sm hover:underline"><i class="fas fa-download mr-1"></i> Descargar Documento</a>
+            </div>
+            
+            <!-- Protocolo Inclusión -->
+            <div class="bg-white p-6 rounded-lg shadow border border-gray-100 hover:shadow-lg transition group">
+                <div class="text-teal-500 mb-4">
+                    <i class="fas fa-universal-access text-4xl group-hover:scale-110 transition"></i>
+                </div>
+                <h3 class="font-bold text-gray-800 mb-2">Protocolo de Inclusión</h3>
+                <p class="text-sm text-gray-600 mb-4">Medidas para asegurar la inclusión, equidad y respeto a la diversidad en nuestra comunidad.</p>
+                <a href="#" class="text-teal-500 font-semibold text-sm hover:underline"><i class="fas fa-download mr-1"></i> Descargar Documento</a>
+            </div>
+        </div>
+
+    </div>
+</Layout>

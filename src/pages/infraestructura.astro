@@ -1,0 +1,88 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+    title="Liceo Trapaqueante - Infraestructura e Instalaciones"
+    description="Conoce los espacios, laboratorios y áreas deportivas de nuestro Liceo Bicentenario Trapaqueante."
+>
+    <!-- Header -->
+    <div class="bg-liceo-blue py-16 border-b-4 border-liceo-yellow text-white relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Nuestra Infraestructura</h1>
+            <p class="text-lg max-w-2xl mx-auto text-blue-200">Espacios diseñados para el aprendizaje técnico, humanista y el desarrollo integral de nuestros estudiantes.</p>
+        </div>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="max-w-6xl mx-auto px-4 py-16">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 items-center">
+            <div>
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 border-l-4 border-liceo-yellow pl-4">Laboratorios de Especialidad</h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Contamos con laboratorios equipados con tecnología de punta para nuestras especialidades Técnico Profesionales. Nuestros estudiantes de <strong>Acuicultura</strong> y <strong>Enfermería</strong> realizan sus prácticas en entornos que simulan las exigencias reales del mundo laboral.
+                </p>
+                <ul class="space-y-2 text-gray-600">
+                    <li><i class="fas fa-check-circle text-liceo-green mr-2"></i> Talleres de Acuicultura con sistemas de recirculación.</li>
+                    <li><i class="fas fa-check-circle text-liceo-green mr-2"></i> Salas de simulación clínica para Enfermería.</li>
+                    <li><i class="fas fa-check-circle text-liceo-green mr-2"></i> Laboratorios de Ciencias completamente equipados.</li>
+                </ul>
+            </div>
+            <div class="rounded-xl overflow-hidden shadow-lg h-80">
+                <img src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Laboratorio de especialidad" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 items-center flex-col-reverse md:flex-row-reverse">
+            <div class="rounded-xl overflow-hidden shadow-lg h-80">
+                <img src="https://images.unsplash.com/photo-1568667256549-094345857637?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Biblioteca Escolar CRA" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+            </div>
+            <div>
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 border-l-4 border-liceo-blue pl-4">Centro de Recursos para el Aprendizaje (CRA)</h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Nuestra biblioteca o CRA es el corazón intelectual del liceo. Un espacio silencioso, cómodo y moderno donde los estudiantes pueden investigar, leer, utilizar computadores conectados a internet y desarrollar sus proyectos académicos en un ambiente estimulante.
+                </p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 items-center">
+            <div>
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 border-l-4 border-liceo-red pl-4">Áreas Deportivas y Recreativas</h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Creemos en una educación integral donde la salud física es fundamental. El liceo dispone de amplios espacios para la práctica de diversas disciplinas deportivas y zonas de esparcimiento seguras para los recreos.
+                </p>
+                <ul class="space-y-2 text-gray-600">
+                    <li><i class="fas fa-check-circle text-liceo-red mr-2"></i> Multicanchas techadas.</li>
+                    <li><i class="fas fa-check-circle text-liceo-red mr-2"></i> Implementos para fútbol, básquetbol y vóleibol.</li>
+                    <li><i class="fas fa-check-circle text-liceo-red mr-2"></i> Patios techados para temporadas de lluvia.</li>
+                </ul>
+            </div>
+            <div class="rounded-xl overflow-hidden shadow-lg h-80">
+                <img src="https://images.unsplash.com/photo-1574629810360-7efbb1925846?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Áreas deportivas" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+            </div>
+        </div>
+
+        <!-- Galería de otras instalaciones -->
+        <h2 class="text-2xl font-bold text-center text-gray-800 mb-8 mt-20">Más de nuestros espacios</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="h-48 rounded-lg overflow-hidden shadow">
+                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Salas de clases" class="w-full h-full object-cover hover:scale-110 transition duration-300">
+                <p class="bg-gray-800 text-white text-xs text-center py-1">Salas Climatizadas</p>
+            </div>
+            <div class="h-48 rounded-lg overflow-hidden shadow">
+                <img src="https://images.unsplash.com/photo-1590402494587-44b71d7772f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Casino Junaeb" class="w-full h-full object-cover hover:scale-110 transition duration-300">
+                <p class="bg-gray-800 text-white text-xs text-center py-1">Comedor / Casino</p>
+            </div>
+            <div class="h-48 rounded-lg overflow-hidden shadow">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Sala de computación" class="w-full h-full object-cover hover:scale-110 transition duration-300">
+                <p class="bg-gray-800 text-white text-xs text-center py-1">Laboratorio de Computación</p>
+            </div>
+            <div class="h-48 rounded-lg overflow-hidden shadow">
+                <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Áreas verdes" class="w-full h-full object-cover hover:scale-110 transition duration-300">
+                <p class="bg-gray-800 text-white text-xs text-center py-1">Áreas Verdes</p>
+            </div>
+        </div>
+
+    </div>
+</Layout>
