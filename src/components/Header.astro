@@ -34,12 +34,11 @@ const currentPath = Astro.url.pathname;
                 
                 <!-- Dropdown Comunidad -->
                 <div class="relative group">
-                    <button class={`hover:text-liceo-yellow transition flex items-center gap-1 h-full py-2 ${(currentPath.includes('/noticias') || currentPath.includes('/galeria') || currentPath.includes('/calendario') || currentPath.includes('/documentos')) ? 'text-liceo-yellow' : ''}`}>
+                    <button class={`hover:text-liceo-yellow transition flex items-center gap-1 h-full py-2 ${(currentPath.includes('/galeria') || currentPath.includes('/calendario') || currentPath.includes('/documentos') || currentPath.includes('/representantes')) ? 'text-liceo-yellow' : ''}`}>
                         Comunidad <i class="fas fa-chevron-down text-xs ml-1"></i>
                     </button>
                     <div class="absolute left-0 top-full pt-2 w-48 hidden group-hover:block z-50">
                         <div class="bg-white text-gray-800 rounded-md shadow-xl py-2 border-t-4 border-liceo-blue">
-                            <a href="/noticias" class="block px-4 py-2 hover:bg-gray-100 hover:text-liceo-blue transition">Noticias</a>
                             <a href="/galeria" class="block px-4 py-2 hover:bg-gray-100 hover:text-liceo-blue transition">Galería</a>
                             <a href="/calendario" class="block px-4 py-2 hover:bg-gray-100 hover:text-liceo-blue transition">Calendario Escolar</a>
                             <a href="/representantes" class="block px-4 py-2 hover:bg-gray-100 hover:text-liceo-blue transition">CEAL y CGPA</a>
@@ -94,7 +93,6 @@ const currentPath = Astro.url.pathname;
             <a href="/especialidades" class="block px-3 py-2 text-base font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800">Especialidades</a>
             
             <div class="px-3 py-2 text-base font-bold text-blue-200 mt-2">Comunidad</div>
-            <a href="/noticias" class="block pl-6 pr-3 py-2 text-sm font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800/50">Noticias</a>
             <a href="/galeria" class="block pl-6 pr-3 py-2 text-sm font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800/50">Galería</a>
             <a href="/calendario" class="block pl-6 pr-3 py-2 text-sm font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800/50">Calendario</a>
             <a href="/representantes" class="block pl-6 pr-3 py-2 text-sm font-medium hover:bg-blue-800 hover:text-liceo-yellow border-b border-blue-800/50">CEAL y CGPA</a>

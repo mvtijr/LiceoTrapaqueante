@@ -54,84 +54,47 @@ import Layout from '../layouts/Layout.astro';
         </div>
     </div>
 
-    <!-- Sección MINEDUC Feed -->
+    <!-- Portales de Utilidad -->
     <div class="bg-gray-50 py-16 border-b border-gray-200">
         <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-between items-center mb-8">
-                <h2 class="text-3xl font-bold text-gray-800 border-l-4 border-liceo-blue pl-4">Noticias MINEDUC</h2>
-                <a href="/noticias" class="text-liceo-blue font-bold hover:underline hidden md:block">Ver todas las oficiales →</a>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 border-b-4 border-liceo-yellow inline-block pb-2">Portales de Utilidad y Beneficios</h2>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Accesos directos a las plataformas oficiales para estudiantes y apoderados.</p>
             </div>
             
-            <div id="mineduc-news-container-home" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Skeletons Loading -->
-                <div class="animate-pulse bg-white p-6 rounded-lg shadow-sm border border-gray-100 h-48"></div>
-                <div class="animate-pulse bg-white p-6 rounded-lg shadow-sm border border-gray-100 h-48 hidden md:block"></div>
-                <div class="animate-pulse bg-white p-6 rounded-lg shadow-sm border border-gray-100 h-48 hidden md:block"></div>
-            </div>
-            
-            <div class="mt-6 text-center md:hidden">
-                <a href="/noticias" class="text-liceo-blue font-bold hover:underline">Ver todas las oficiales →</a>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Tarjeta JUNAEB -->
+                <a href="https://portalbecas.junaeb.cl" target="_blank" rel="noopener noreferrer" class="bg-white rounded-xl shadow-md p-8 text-center border-t-4 border-yellow-500 hover:-translate-y-2 hover:shadow-xl transition duration-300 group flex flex-col items-center">
+                    <div class="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center text-4xl text-yellow-600 mb-4 group-hover:scale-110 transition">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Becas JUNAEB</h3>
+                    <p class="text-sm text-gray-600 mb-4 flex-grow">Postula o renueva la Beca Indígena, Beca Presidente de la República y otros beneficios estatales.</p>
+                    <span class="text-yellow-600 font-bold text-sm">Ir al Portal <i class="fas fa-external-link-alt ml-1"></i></span>
+                </a>
+
+                <!-- Tarjeta TNE -->
+                <a href="https://www.tne.cl" target="_blank" rel="noopener noreferrer" class="bg-white rounded-xl shadow-md p-8 text-center border-t-4 border-liceo-blue hover:-translate-y-2 hover:shadow-xl transition duration-300 group flex flex-col items-center">
+                    <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center text-4xl text-liceo-blue mb-4 group-hover:scale-110 transition">
+                        <i class="fas fa-bus"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Pase Escolar (TNE)</h3>
+                    <p class="text-sm text-gray-600 mb-4 flex-grow">Infórmate sobre los procesos de captura fotográfica, revalidación y reposición de tu Tarjeta Nacional Estudiantil.</p>
+                    <span class="text-liceo-blue font-bold text-sm">Ir al Portal <i class="fas fa-external-link-alt ml-1"></i></span>
+                </a>
+
+                <!-- Tarjeta SAE -->
+                <a href="https://www.sistemadeadmisionescolar.cl" target="_blank" rel="noopener noreferrer" class="bg-white rounded-xl shadow-md p-8 text-center border-t-4 border-liceo-red hover:-translate-y-2 hover:shadow-xl transition duration-300 group flex flex-col items-center">
+                    <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center text-4xl text-liceo-red mb-4 group-hover:scale-110 transition">
+                        <i class="fas fa-laptop-house"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Admisión Escolar</h3>
+                    <p class="text-sm text-gray-600 mb-4 flex-grow">Plataforma oficial del MINEDUC para postular a los establecimientos públicos y subvencionados del país.</p>
+                    <span class="text-liceo-red font-bold text-sm">Ir al Portal <i class="fas fa-external-link-alt ml-1"></i></span>
+                </a>
             </div>
         </div>
     </div>
-
-    <!-- Script para Mineduc Home -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const rssUrl = 'https://www.mineduc.cl/feed/';
-            const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
-            const container = document.getElementById('mineduc-news-container-home');
-
-            if (container) {
-                fetch(apiUrl)
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.status === 'ok') {
-                            container.innerHTML = ''; 
-                            const items = data.items.slice(0, 3);
-                            
-                            // Imágenes de stock educativas para cuando el feed no trae imagen
-                            const stockImages = [
-                                "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                                "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                                "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                            ];
-
-                            items.forEach((item, index) => {
-                                const pubDate = new Date(item.pubDate);
-                                const dateString = pubDate.toLocaleDateString('es-CL', { day: '2-digit', month: 'short' });
-                                
-                                // Usar thumbnail proporcionado por la API si existe, sino imagen de stock
-                                let imageUrl = item.thumbnail || stockImages[index % stockImages.length];
-                                const fallbackImage = stockImages[index % stockImages.length];
-
-                                const card = document.createElement('a');
-                                card.href = item.link;
-                                card.target = "_blank";
-                                card.rel = "noopener noreferrer";
-                                card.className = "bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition duration-300 block group overflow-hidden flex flex-col";
-                                card.innerHTML = `
-                                    <div class="h-48 overflow-hidden relative">
-                                        <img src="${imageUrl}" onerror="this.onerror=null; this.src='${fallbackImage}';" alt="Noticia MINEDUC" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                                        <div class="absolute top-4 left-4 bg-liceo-yellow text-liceo-blue text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
-                                            ${dateString}
-                                        </div>
-                                    </div>
-                                    <div class="p-6 flex-grow flex flex-col">
-                                        <h3 class="font-bold text-gray-800 mb-3 group-hover:text-liceo-blue transition line-clamp-3 leading-snug">${item.title}</h3>
-                                        <span class="text-liceo-blue font-semibold text-sm group-hover:underline mt-auto inline-block">Leer comunicado oficial →</span>
-                                    </div>
-                                `;
-                                container.appendChild(card);
-                            });
-                        } else {
-                            container.innerHTML = '<p class="text-red-500">No se pudieron cargar las noticias del ministerio.</p>';
-                        }
-                    })
-                    .catch(error => console.error('Error fetching MINEDUC:', error));
-            }
-        });
-    </script>
 
     <!-- Sección Instagram Feed -->
     <div class="bg-gray-100 py-16">
