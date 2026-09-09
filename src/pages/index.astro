@@ -54,12 +54,12 @@ import Layout from '../layouts/Layout.astro';
         </div>
     </div>
 
-    <!-- Sección MINEDUC Feed -->
+    <!-- Sección JUNAEB Feed -->
     <div class="bg-gray-50 py-16 border-b border-gray-200">
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex justify-between items-center mb-8">
-                <h2 class="text-3xl font-bold text-gray-800 border-l-4 border-liceo-blue pl-4">Noticias MINEDUC</h2>
-                <a href="/noticias" class="text-liceo-blue font-bold hover:underline hidden md:block">Ver todas las oficiales →</a>
+                <h2 class="text-3xl font-bold text-gray-800 border-l-4 border-liceo-blue pl-4">Noticias JUNAEB y Beneficios</h2>
+                <a href="/noticias" class="text-liceo-blue font-bold hover:underline hidden md:block">Ver todas las noticias →</a>
             </div>
             
             <div id="mineduc-news-container-home" class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -70,7 +70,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
             
             <div class="mt-6 text-center md:hidden">
-                <a href="/noticias" class="text-liceo-blue font-bold hover:underline">Ver todas las oficiales →</a>
+                <a href="/noticias" class="text-liceo-blue font-bold hover:underline">Ver todas las noticias →</a>
             </div>
         </div>
     </div>
@@ -78,7 +78,7 @@ import Layout from '../layouts/Layout.astro';
     <!-- Script para Mineduc Home -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const rssUrl = 'https://www.mineduc.cl/feed/';
+            const rssUrl = 'https://www.junaeb.cl/feed/';
             const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
             const container = document.getElementById('mineduc-news-container-home');
 
@@ -112,14 +112,14 @@ import Layout from '../layouts/Layout.astro';
                                 card.className = "bg-white rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition duration-300 block group overflow-hidden flex flex-col";
                                 card.innerHTML = `
                                     <div class="h-48 overflow-hidden relative">
-                                        <img src="${imageUrl}" onerror="this.onerror=null; this.src='${fallbackImage}';" alt="Noticia MINEDUC" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                        <img src="${imageUrl}" onerror="this.onerror=null; this.src='${fallbackImage}';" alt="Noticia JUNAEB" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                                         <div class="absolute top-4 left-4 bg-liceo-yellow text-liceo-blue text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
                                             ${dateString}
                                         </div>
                                     </div>
                                     <div class="p-6 flex-grow flex flex-col">
                                         <h3 class="font-bold text-gray-800 mb-3 group-hover:text-liceo-blue transition line-clamp-3 leading-snug">${item.title}</h3>
-                                        <span class="text-liceo-blue font-semibold text-sm group-hover:underline mt-auto inline-block">Leer comunicado oficial →</span>
+                                        <span class="text-liceo-blue font-semibold text-sm group-hover:underline mt-auto inline-block">Leer nota oficial →</span>
                                     </div>
                                 `;
                                 container.appendChild(card);

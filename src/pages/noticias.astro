@@ -2,28 +2,28 @@
 import Layout from '../layouts/Layout.astro';
 ---
 <Layout 
-    title="Liceo Trapaqueante - Noticias MINEDUC"
-    description="Últimas noticias del Ministerio de Educación de Chile."
+    title="Liceo Trapaqueante - Noticias JUNAEB"
+    description="Últimas noticias de la Junta Nacional de Auxilio Escolar y Becas."
 >
-    <!-- Header Noticias -->
-    <div class="bg-gray-800 py-16 border-b-4 border-liceo-blue text-white relative overflow-hidden">
-        <div class="absolute inset-0 opacity-20">
-            <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Noticias" class="w-full h-full object-cover">
+    <!-- Hero Noticias -->
+    <div class="bg-liceo-blue py-16 border-b-4 border-liceo-yellow text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Lectura" class="w-full h-full object-cover">
         </div>
         <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
             <div class="bg-white text-gray-800 w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-md mx-auto mb-4 border-2 border-liceo-blue">
                 <i class="fas fa-newspaper"></i>
             </div>
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Noticias Oficiales</h1>
-            <p class="text-lg max-w-2xl mx-auto text-gray-200">Mantente informado con los comunicados oficiales del Ministerio de Educación.</p>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Noticias Institucionales</h1>
+            <p class="text-lg max-w-2xl mx-auto text-gray-200">Mantente informado con los comunicados oficiales, beneficios y actualidad sobre JUNAEB.</p>
         </div>
     </div>
 
-    <!-- Feed MINEDUC (Client Side Rendered) -->
+    <!-- Feed JUNAEB (Client Side Rendered) -->
     <div class="max-w-6xl mx-auto px-4 py-16">
         <div class="flex justify-between items-center mb-8">
-            <h2 class="text-2xl font-bold text-gray-800 border-l-4 border-liceo-blue pl-4">Últimas Publicaciones del MINEDUC</h2>
-            <a href="https://www.mineduc.cl/category/noticias/" target="_blank" rel="noopener noreferrer" class="text-liceo-blue font-bold hover:underline text-sm hidden md:inline-block">Ir a Mineduc.cl →</a>
+            <h2 class="text-2xl font-bold text-gray-800 border-l-4 border-liceo-blue pl-4">Últimas Novedades JUNAEB</h2>
+            <a href="https://www.junaeb.cl" target="_blank" rel="noopener noreferrer" class="text-liceo-blue font-bold hover:underline text-sm hidden md:inline-block">Ir a Junaeb.cl →</a>
         </div>
 
         <div id="mineduc-news-container-page" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -49,13 +49,13 @@ import Layout from '../layouts/Layout.astro';
         </div>
         
         <div class="mt-8 text-center md:hidden">
-            <a href="https://www.mineduc.cl/category/noticias/" target="_blank" rel="noopener noreferrer" class="bg-gray-100 text-gray-700 font-bold py-2 px-6 rounded-full hover:bg-gray-200 transition">Ver más en Mineduc.cl</a>
+            <a href="https://www.junaeb.cl" target="_blank" rel="noopener noreferrer" class="bg-gray-100 text-gray-700 font-bold py-2 px-6 rounded-full hover:bg-gray-200 transition">Ver más en Junaeb.cl</a>
         </div>
     </div>
 
-    <!-- Script para cargar el RSS de Mineduc -->
+    <!-- Script para cargar el RSS -->
     <script>
-        const rssUrl = 'https://www.mineduc.cl/feed/';
+        const rssUrl = 'https://www.junaeb.cl/feed/';
         const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
         
         const container = document.getElementById('mineduc-news-container-page');
@@ -103,7 +103,7 @@ import Layout from '../layouts/Layout.astro';
                             
                             card.innerHTML = `
                                 <div class="h-48 overflow-hidden relative">
-                                    <img src="${imageUrl}" onerror="this.onerror=null; this.src='${fallbackImage}';" alt="Noticia MINEDUC" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                    <img src="${imageUrl}" onerror="this.onerror=null; this.src='${fallbackImage}';" alt="Noticia JUNAEB" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                                 </div>
                                 <div class="p-6 flex-grow flex flex-col">
                                     <div class="flex items-center gap-2 text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">
@@ -112,18 +112,18 @@ import Layout from '../layouts/Layout.astro';
                                     </div>
                                     <h3 class="font-bold text-lg text-gray-800 mb-3 group-hover:text-liceo-blue transition">${item.title}</h3>
                                     <p class="text-sm text-gray-600 mb-4 line-clamp-3">${descriptionText}</p>
-                                    <span class="text-liceo-blue font-semibold text-sm group-hover:underline mt-auto">Leer comunicado oficial →</span>
+                                    <span class="text-liceo-blue font-semibold text-sm group-hover:underline mt-auto">Leer nota oficial →</span>
                                 </div>
                             `;
                             
                             container.appendChild(card);
                         });
                     } else {
-                        container.innerHTML = '<p class="text-red-500 col-span-3">No se pudieron cargar las noticias del ministerio en este momento.</p>';
+                        container.innerHTML = '<p class="text-red-500 col-span-3">No se pudieron cargar las noticias en este momento.</p>';
                     }
                 })
                 .catch(error => {
-                    console.error('Error fetching MINEDUC news:', error);
+                    console.error('Error fetching JUNAEB news:', error);
                     container.innerHTML = '<p class="text-gray-500 col-span-3">Ocurrió un error al cargar las noticias.</p>';
                 });
         }
