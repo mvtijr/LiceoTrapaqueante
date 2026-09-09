@@ -39,8 +39,13 @@ import Layout from '../layouts/Layout.astro';
             <div class="p-8 md:w-2/3">
                 <h2 class="text-3xl font-bold text-gray-800 mb-4">Tarjeta Nacional Estudiantil (TNE)</h2>
                 <p class="text-gray-600 mb-4">La TNE o "Pase Escolar" es un beneficio que permite a nuestros estudiantes acceder a tarifas rebajadas o gratuitas en el transporte público, fundamental para quienes se desplazan desde sectores rurales o comunas aledañas a Tirúa.</p>
-                <div class="bg-blue-50 p-4 rounded-lg border border-blue-100 inline-block">
+                <div class="bg-blue-50 p-4 rounded-lg border border-blue-100 inline-block mb-4">
                     <p class="text-sm text-liceo-blue font-bold"><i class="fas fa-info-circle mr-2"></i> Trámite: El liceo apoya en el proceso de captura fotográfica y revalidación anual a través del sistema oficial de JUNAEB.</p>
+                </div>
+                <div>
+                    <a href="https://www.tne.cl/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-liceo-blue text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-800 transition">
+                        Ir al portal oficial de TNE <i class="fas fa-external-link-alt text-sm"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -54,28 +59,31 @@ import Layout from '../layouts/Layout.astro';
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
-                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-yellow-500 hover:-translate-y-1 transition duration-300">
+                <a href="https://portalbecas.junaeb.cl/" target="_blank" rel="noopener noreferrer" class="block bg-white p-6 rounded-xl shadow-md border-t-4 border-yellow-500 hover:-translate-y-1 hover:shadow-xl transition duration-300 group flex flex-col">
                     <div class="w-14 h-14 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center text-2xl mb-4">
                         <i class="fas fa-landmark"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Beca Indígena (BI)</h3>
-                    <p class="text-gray-600 text-sm">Aporte monetario destinado a estudiantes de ascendencia indígena (con certificado CONADI) que presenten buen rendimiento académico y vulnerabilidad socioeconómica. Altamente relevante para nuestra comunidad de Tirúa.</p>
-                </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-yellow-600 transition">Beca Indígena (BI)</h3>
+                    <p class="text-gray-600 text-sm flex-grow">Aporte monetario destinado a estudiantes de ascendencia indígena (con certificado CONADI) que presenten buen rendimiento académico y vulnerabilidad socioeconómica. Altamente relevante para nuestra comunidad de Tirúa.</p>
+                    <span class="text-yellow-600 font-bold text-sm mt-4 group-hover:underline"><i class="fas fa-edit mr-1"></i> Postular o renovar aquí</span>
+                </a>
 
-                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-liceo-red hover:-translate-y-1 transition duration-300">
+                <a href="https://portalbecas.junaeb.cl/" target="_blank" rel="noopener noreferrer" class="block bg-white p-6 rounded-xl shadow-md border-t-4 border-liceo-red hover:-translate-y-1 hover:shadow-xl transition duration-300 group flex flex-col">
                     <div class="w-14 h-14 bg-red-100 text-liceo-red rounded-full flex items-center justify-center text-2xl mb-4">
                         <i class="fas fa-award"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Beca Presidente de la República</h3>
-                    <p class="text-gray-600 text-sm">Premia el esfuerzo de estudiantes de enseñanza media con excelencia académica (promedio sobre 6.0) y que se encuentren en los tramos más vulnerables del Registro Social de Hogares.</p>
-                </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-liceo-red transition">Beca Presidente de la República</h3>
+                    <p class="text-gray-600 text-sm flex-grow">Premia el esfuerzo de estudiantes de enseñanza media con excelencia académica (promedio sobre 6.0) y que se encuentren en los tramos más vulnerables del Registro Social de Hogares.</p>
+                    <span class="text-liceo-red font-bold text-sm mt-4 group-hover:underline"><i class="fas fa-edit mr-1"></i> Postular o renovar aquí</span>
+                </a>
 
-                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-liceo-green hover:-translate-y-1 transition duration-300">
+                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-liceo-green flex flex-col">
                     <div class="w-14 h-14 bg-green-100 text-liceo-green rounded-full flex items-center justify-center text-2xl mb-4">
                         <i class="fas fa-pencil-ruler"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-800 mb-3">Programa Útiles Escolares (PUE)</h3>
-                    <p class="text-gray-600 text-sm">Entrega anual de un set de útiles escolares estandarizado, que alivia la carga económica de las familias a inicio del año escolar. Se asigna automáticamente por el nivel de vulnerabilidad.</p>
+                    <p class="text-gray-600 text-sm flex-grow">Entrega anual de un set de útiles escolares estandarizado, que alivia la carga económica de las familias a inicio del año escolar. Se asigna automáticamente por el nivel de vulnerabilidad.</p>
+                    <span class="text-gray-400 font-medium text-xs mt-4"><i class="fas fa-info-circle mr-1"></i> Asignación automática (no postulable)</span>
                 </div>
 
             </div>
